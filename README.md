@@ -27,3 +27,9 @@ Kelompok 6:
 - langkah untuk commit saat setelah cloning adalah dengan menambahkan dulu semua yang ada di project anda ke repo lokal anda dengan perintah "git add ." lalu setelah itu di commit dengan perintah "git commit -m "`pesan commit anda`" " 
 - langkah untuk commit selain setelah clonning (dengan kata lain memperbarui repo lokal anda) adalah dengan mengetikan perintah "git commit -am "`pesan commit anda`" "
 - jangan lupa berdoa sebelum bekerja
+
+
+#error di git
+- `fatal: refusing to merge unrelated histories` saat pull. cara mengatasi: `git pull {nama remote} {nama branch} --allow-unrelated-histories`
+- `error: src refspec faris does not match any` saat push. cara mengatasi: nama branch lokal anda harus sama dengan branch yang akan anda push
+- saat pull terdapat `Already up to date.` tapi di lokal anda tidak ada yang berubah. itu berarti di lokal anda lebih update daripada di github. jika anda tetap ingin pull ke github anda harus commit dulu di githubnya setelah itu anda bisa pull lagi.
