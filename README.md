@@ -16,7 +16,7 @@ Kelompok 6:
 
 #Pembagian tugas project
 -Front end development:
-
+ 1. sopo
 
 -back end development:
 
@@ -26,6 +26,8 @@ Kelompok 6:
 - pastikan anda sudah menjadi colaborate dengan klik link yang sudah di bagikan di grub whatsapp atau anda bisa fork ke akun anda (lebih disarankan menjadi colaborate)
 - di git bash anda initials dulu git bash anda dengan perintah "git init"
 - jika sudah melakukan cara di atas maka selanjutnya anda cloning project di github ke komputer anda dengan mengetikkan perintah `git clone {url github}`
+- cara membuat branch di git adlah dengan perintah `git branch {nama branch}`. 
+- cara berpindah branch adalah dengan mengetikkan perintah `git checkout {nama branch}`.
 - untuk commit jika setiap ada file baru harus menggunakan `git add .` dulu lalu `git commit -m "{pesan commit}"`.
 - untuk commit jika tidak ada file baru atau file di hapus atau hanya ingin mengupdate maka cukup gunakan perintah `git commit -am "{pesan commit}"`
 - untuk push, nama branch lokal anda harus sama dengan branch yang akan anda push dengan mengetikkan `git push -u {nama remote anda} {nama branch yang akan anda push}`.
@@ -38,5 +40,5 @@ Kelompok 6:
 
 #error di git
 - `fatal: refusing to merge unrelated histories` saat pull. cara mengatasi: `git pull {nama remote} {nama branch} --allow-unrelated-histories`
-- `error: src refspec faris does not match any` saat push. cara mengatasi: nama branch lokal anda harus sama dengan branch yang akan anda push
+- `error: src refspec faris does not match any` saat push. cara mengatasi: nama branch lokal anda harus sama dengan branch yang akan anda push.
 - saat pull terdapat `Already up to date.` tapi di lokal anda tidak ada yang berubah. itu berarti di lokal anda lebih update daripada di github dan di github tidak ada perubahan apapun. jika anda tetap ingin pull ke github anda harus ada perubahan dan di commit dulu di githubnya setelah itu anda bisa pull lagi.
