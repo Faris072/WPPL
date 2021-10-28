@@ -15,4 +15,10 @@ Kelompok 6:
 -Front end development:
 
 -back end development:
-0
+
+
+#Cara menggunakan github
+- pastikan anda sudah menjadi colaborate dengan klik link yang sudah di bagikan di grub whatsapp atau anda bisa fork ke akun anda (lebih disarankan menjadi colaborate)
+- jika sudah melakukan cara di atas maka selanjutnya anda cloning project di github ke komputer anda dengan mengetikkan perintah "git clone <url github>"
+- untuk push, nama branch lokal anda harus sama dengan branch yang akan anda push dengan mengetikkan "git push -u <nama remote anda> <nama branch yang akan anda push>".
+- untuk pull
