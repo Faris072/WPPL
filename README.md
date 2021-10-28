@@ -26,6 +26,8 @@ Kelompok 6:
 - pastikan anda sudah menjadi colaborate dengan klik link yang sudah di bagikan di grub whatsapp atau anda bisa fork ke akun anda (lebih disarankan menjadi colaborate)
 - di git bash anda initials dulu git bash anda dengan perintah "git init"
 - jika sudah melakukan cara di atas maka selanjutnya anda cloning project di github ke komputer anda dengan mengetikkan perintah `git clone {url github}`
+- cara membuat branch di git adlah dengan perintah `git branch {nama branch}`. 
+- cara berpindah branch adalah dengan mengetikkan perintah `git checkout {nama branch}`.
 - untuk commit jika setiap ada file baru harus menggunakan `git add .` dulu lalu `git commit -m "{pesan commit}"`.
 - untuk commit jika tidak ada file baru atau file di hapus atau hanya ingin mengupdate maka cukup gunakan perintah `git commit -am "{pesan commit}"`
 - untuk push, nama branch lokal anda harus sama dengan branch yang akan anda push dengan mengetikkan `git push -u {nama remote anda} {nama branch yang akan anda push}`.
