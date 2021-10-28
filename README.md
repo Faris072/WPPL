@@ -26,3 +26,4 @@ Kelompok 6:
 - jangan lupa setelah cloning, sebelum push, dan sesudah pull di commit di branch lokal anda.
 - langkah untuk commit saat setelah cloning adalah dengan menambahkan dulu semua yang ada di project anda ke repo lokal anda dengan perintah "git add ." lalu setelah itu di commit dengan perintah "git commit -m "`pesan commit anda`" " 
 - langkah untuk commit selain setelah clonning (dengan kata lain memperbarui repo lokal anda) adalah dengan mengetikan perintah "git commit -am "`pesan commit anda`" "
+
