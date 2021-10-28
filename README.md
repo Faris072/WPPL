@@ -9,3 +9,9 @@ Kelompok 6:
 #Jadwal:
 - 27 Oktober 2021 - 04 November 2021 Belajar Github
 - 04 November membahas ulang github beserta diskusi aplikasi final project
+
+
+#Pembagian tugas project
+-Front end development:
+
+-back end development:
