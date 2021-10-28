@@ -16,7 +16,7 @@ Kelompok 6:
 
 #Pembagian tugas project
 -Front end development:
-
+ 1. sopo
 
 -back end development:
 
