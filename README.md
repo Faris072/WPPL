@@ -26,14 +26,17 @@ Kelompok 6:
 
 ##Cara menggunakan github
 - pastikan anda sudah menjadi colaborate dengan klik link yang sudah di bagikan di grub whatsapp atau anda bisa fork ke akun anda (lebih disarankan menjadi colaborate)
-- di git bash anda initials dulu git bash anda dengan perintah "git init"
 - jika sudah melakukan cara di atas maka selanjutnya anda cloning project di github ke komputer anda dengan mengetikkan perintah `git clone {url github}`
+- cek apakah sudah di init atau belum. cara mengetahui sudah di initialisasi atau belum adalah jika sudah di inisialisasi akan ada `(nama branch)` setelah path folder project anda di terminal git bash.
+- jika belum ada maka anda harus initials dulu folder tersebut dengan perintah `git init`.
+- untuk menghapus semua git repo dan membatalkan init maka ketikkan `rm -rf .git`
 - cara membuat branch di git adlah dengan perintah `git branch {nama branch}`. 
 - cara berpindah branch adalah dengan mengetikkan perintah `git checkout {nama branch}`.
 - untuk commit jika setiap ada file baru harus menggunakan `git add .` dulu lalu `git commit -m "{pesan commit}"`.
 - untuk commit jika tidak ada file baru atau file di hapus atau hanya ingin mengupdate maka cukup gunakan perintah `git commit -am "{pesan commit}"`
 - untuk mengechek remot cukup ketikkan perintah `git remote`
 - untuk menambahkan remot cukup ketikkan perintah `git remote add {nama remote} {url github}` 
+- untuk rename remote cukup ketikkan perintah `gir remote rename {nama remote sebelumnya} {nama remote baru}` 
 - untuk push, nama branch lokal anda harus sama dengan branch yang akan anda push dengan mengetikkan `git push -u {nama remote anda} {nama branch yang akan anda push}`.
 - untuk pull pastikan branch lokal anda sama dengan branch yang akan anda pull. pull menggunakan perinatah `git pull {nama remote} {nama branch}`.
 - jangan lupa setelah cloning, sebelum push, dan sesudah pull di commit di branch lokal anda.
