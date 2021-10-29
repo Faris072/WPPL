@@ -5,13 +5,18 @@
     @include('parts/cdnbootstrap')
 </head>
 <body>
+
     @include('parts/navbar')
 
     <div class="container-fluid-xl">
 
         @include('parts/sidebar')
 
-        @yield('body')
+        <div class="container-fluid-xl" id="isi">
+            <div class="container">
+                @yield('body')
+            </div>
+        </div>
 
     </div>
 

@@ -1,7 +1,6 @@
 @extends('parts/body')
 
 @section('body')
-        <div class="isi">
-            aaa
-        </div>
+        <center><h1>Halo</h1></center>
+        <p>aaaa</p>
 @endsection

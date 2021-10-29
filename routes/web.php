@@ -20,7 +20,7 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard', [
         'title' => 'dashboard',
-        'css' => 'css/dashboard.css',
-        'js' => 'js'
+        'css' => 'css/body.css',
+        'js' => 'js/body.js'
     ]);
 });

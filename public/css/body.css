@@ -1,0 +1,45 @@
+.navbar{
+    position: sticky;
+    top:0;
+}
+
+.sidebar{
+    position:fixed;
+    width:20%;
+    height:100vh;
+    overflow-y:auto;
+    background-color:rgba(255, 78, 78, 0.993);
+    transition: 1s cubic-bezier(0.74, -0.55, 0.29, 1.53);
+}
+
+.sidebar ul{
+    padding:0;
+}
+
+.sidebar ul li{
+    list-style:none;
+    padding:0;
+}
+
+.sidebar ul li a{
+    text-decoration:none;
+    color:black;
+    padding:10px;
+    padding-left:20px;
+    display:block;
+    width:100%;
+}
+
+.sidebar ul li a:hover{
+    background-color:white;
+}
+
+#isi{
+    position:fixed;
+    width:80%;
+    height:100vh;
+    overflow-y:auto;
+    right:0;
+    transition: 1s cubic-bezier(0.74, -0.55, 0.29, 1.53);
+    background-color: blue;
+}
