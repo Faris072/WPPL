@@ -1,0 +1,20 @@
+.navbar{
+    position: sticky;
+    top:0;
+}
+
+.sidebar{
+    position:fixed;
+    width:20%;
+    height:100vh;
+    overflow-y:auto;
+    background-color:rgba(255, 91, 50, 0.993);
+
+}
+.isi{
+    position:fixed;
+    width:80%;
+    height:100vh;
+    overflow-y:auto;
+    right:0;
+}
