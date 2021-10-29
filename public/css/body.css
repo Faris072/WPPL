@@ -41,5 +41,4 @@
     overflow-y:auto;
     right:0;
     transition: 1s cubic-bezier(0.74, -0.55, 0.29, 1.53);
-    background-color: blue;
 }
