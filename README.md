@@ -32,6 +32,8 @@ Kelompok 6:
 - cara berpindah branch adalah dengan mengetikkan perintah `git checkout {nama branch}`.
 - untuk commit jika setiap ada file baru harus menggunakan `git add .` dulu lalu `git commit -m "{pesan commit}"`.
 - untuk commit jika tidak ada file baru atau file di hapus atau hanya ingin mengupdate maka cukup gunakan perintah `git commit -am "{pesan commit}"`
+- untuk mengechek remot cukup ketikkan perintah `git remote`
+- untuk menambahkan remot cukup ketikkan perintah `git remote add {nama remote} {url github}` 
 - untuk push, nama branch lokal anda harus sama dengan branch yang akan anda push dengan mengetikkan `git push -u {nama remote anda} {nama branch yang akan anda push}`.
 - untuk pull pastikan branch lokal anda sama dengan branch yang akan anda pull. pull menggunakan perinatah `git pull {nama remote} {nama branch}`.
 - jangan lupa setelah cloning, sebelum push, dan sesudah pull di commit di branch lokal anda.
