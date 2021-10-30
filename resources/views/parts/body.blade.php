@@ -13,11 +13,14 @@
         @include('parts/sidebar')
 
         <div class="container-fluid-xl" id="isi">
-            <div class="container">
+            <div class="container pt-3">
                 @yield('body')
             </div>
         </div>
 
+    </div>
+    <div class="mode">
+        <button class="rounded-circle btn btn-dark" id="btnmode"><i class="fas fa-moon fa-2x" style="color:yellow;"></i></button>
     </div>
 
     @include('parts/cdnjs')

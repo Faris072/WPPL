@@ -47,3 +47,16 @@
     right:0;
     transition: 1s cubic-bezier(0.74, -0.55, 0.29, 1.53);
 }
+
+#btnmode{
+    position:fixed;
+    z-index:99;
+    width:8vh;
+    bottom:20px;
+    right:15px;
+}
+
+.bgDark{
+    background-color:black;
+    color:white;
+}

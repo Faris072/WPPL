@@ -25,3 +25,14 @@ $('#btnsidebar').on('click', function () {
         $('#btnsidebar').html('<i class="fas fa-times"></i>');
     }
 });
+
+$('#btnmode').on('click', function () {
+    if($('#isi').hasClass('bgDark')){
+    $('#isi').removeClass('bgDark');
+    $('#btnmode').html('<button class="rounded-circle btn btn-dark" id="btnmode"><i class="fas fa-moon fa-2x" style="color:yellow;"></i></button>');
+    }
+    else{
+        $('#isi').addClass('bgDark');
+        $('#btnmode').html('<button class="rounded-circle btn btn-dark" id="btnmode"><i class="fas fa-sun fa-2x" style="color:yellow;"></i>');
+    }
+});
