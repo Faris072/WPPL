@@ -2,7 +2,7 @@
 
 
 Kelompok 6:
-- Bagas Prakoso (isi sendiri)
+- Bagas Prakoso (3120510109)
 - Muhammad Farhan Bilnazari (3120510103)
 - Muhammad Faris Shafwan (3120510104)
 - Fathan Willdany (3120510105)
