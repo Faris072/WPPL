@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <button id="btnsidebar" style="margin-right:50px;" class="btn btn-outline-light"></button>
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
