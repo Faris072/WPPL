@@ -2,15 +2,13 @@
 <html lang="id">
 
 <head>
-    <title>Homepage | Selamat datang!</title>
+    <title>{{ $title }}</title>
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" type="text/css"
-        href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!--Font awesome-->
     <script src="https://kit.fontawesome.com/7b5d20839a.js" crossorigin="anonymous"></script>
     <!--sweetalert-->
@@ -18,6 +16,8 @@
     <!--Font Google-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
+    {{-- css --}}
+    <link rel="stylesheet" href="{{ $css }}">
 
     <style>
 
@@ -27,7 +27,7 @@
 <body>
 
     {{-- navbar --}}
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="position:sticky; z-index:9; top:0;">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,24 +76,21 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="/storage/default/pens 7.jpg" style="height:80vh;"
-                            alt="First slide">
+                        <img class="d-block w-100" src="/storage/default/pens 7.jpg" style="height:80vh;" alt="First slide">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>...</h5>
                             <p>...</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="/storage/default/pens 7.jpg" style="height:80vh;"
-                            alt="First slide">
+                        <img class="d-block w-100" src="/storage/default/pens 7.jpg" style="height:80vh;" alt="First slide">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>...</h5>
                             <p>...</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="/storage/default/pens 7.jpg" style="height:80vh;"
-                            alt="First slide">
+                        <img class="d-block w-100" src="/storage/default/pens 7.jpg" style="height:80vh;" alt="First slide">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>...</h5>
                             <p>...</p>
@@ -121,24 +118,21 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="/storage/default/pens 7.jpg" style="height:80vh;"
-                            alt="First slide">
+                        <img class="d-block w-100" src="/storage/default/pens 7.jpg" style="height:80vh;" alt="First slide">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>...</h5>
                             <p>...</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="/storage/default/pens 7.jpg" style="height:80vh;"
-                            alt="First slide">
+                        <img class="d-block w-100" src="/storage/default/pens 7.jpg" style="height:80vh;" alt="First slide">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>...</h5>
                             <p>...</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="/storage/default/pens 7.jpg" style="height:80vh;"
-                            alt="First slide">
+                        <img class="d-block w-100" src="/storage/default/pens 7.jpg" style="height:80vh;" alt="First slide">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>...</h5>
                             <p>...</p>
@@ -158,9 +152,12 @@
     </div>
     {{-- endslide --}}
 
+    {{-- cotent --}}
     <div class="container">
 
     </div>
+    {{-- endcontent --}}
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
