@@ -17,8 +17,9 @@ class User extends Migration
             $table->id();
             $table->string('username');
             $table->string('email')->unique();
-            $table->string('password', 64)->unique();
-            $table->phone('phone')->nullable();
+            $table->bigInteger('phone')->nullable();
+            $table->string('password', 1000)->unique();
+            $table->boolean('admin');
             $table->timestamp('last_used_at')->nullable();
             $table->timestamps();
         });
