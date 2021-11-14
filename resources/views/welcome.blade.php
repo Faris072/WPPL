@@ -154,7 +154,7 @@
 
     {{-- cotent --}}
     <div class="container">
-
+        <center><h1>Selamat Datang di Web Pembukuan</h1></center>
     </div>
     {{-- endcontent --}}
 

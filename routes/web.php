@@ -27,3 +27,6 @@ Route::get('/dashboard', function () {
         'js' => 'js/body.js'
     ]);
 });
+
+
+Route::resource('/register', 'App\Http\Controllers\userController');

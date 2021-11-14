@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\user;
 use Illuminate\Http\Request;
 
-class userControlleer extends Controller
+class userController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,12 @@ class userControlleer extends Controller
      */
     public function index()
     {
-        //
+        return view('register', [
+            'title' => 'Register Page',
+            'css' => '',
+            'css2' => '',
+            'js' => ''
+        ]);
     }
 
     /**
@@ -35,7 +40,12 @@ class userControlleer extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'email' => 'required|email:dns|max:255|min:12',
+            'username' => 'required|max:255|min:5',
+            'password' => 'required|min:8|max:255|password',
+            'password2' => 'required|min:8|max:255|password'
+        ]);
     }
 
     /**
