@@ -41,11 +41,14 @@ class userController extends Controller
     public function store(Request $request)
     {
 
+        $request['admin'] = false;
+
         $validatedData = $request->validate([
             'email' => 'required|email:dns|max:255|min:12',
             'username' => 'required|max:255|min:5',
             'password' => 'required|min:8|max:255',
-            'password2' => 'required|min:8|max:255'
+            'password2' => 'required|min:8|max:255',
+            'admin' => 'required'
         ]);
 
         $validatedData['password'] = bcrypt($validatedData['password']);
