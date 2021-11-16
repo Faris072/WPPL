@@ -6,7 +6,7 @@ Kelompok 6:
 - Muhammad Farhan Bilnazari (3120510103)
 - Muhammad Faris Shafwan (3120510104)
 - Fathan Willdany (3120510105)
-- Rifa'i Anggara Pratama (isi sendiri)
+- Rifa'i Anggara Pratama (3120510101)
 
 
 
