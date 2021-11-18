@@ -58,8 +58,8 @@
                     <a class="nav-link disabled" href="#">Disabled</a>
                 </li>
             </ul>
-            <button class="btn btn-outline-primary mr-3">Daftar</button>
-            <button class="btn btn-outline-success">Masuk</button>
+            <a href="/register" class="btn btn-outline-primary mr-3">Daftar</a>
+            <a href="/login" class="btn btn-outline-success">Masuk</a>
         </div>
     </nav>
     {{-- endnavbar --}}

@@ -24,6 +24,7 @@ Route::get('/dashboard', function () {
     return view('dashboard', [
         'title' => 'dashboard',
         'css' => 'css/body.css',
+        'css2' => '',
         'js' => 'js/body.js'
     ]);
 });
