@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PembukuanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,5 @@ Route::get('/dashboard', function () {
 
 
 Route::resource('/register', 'App\Http\Controllers\userController');
+
+Route::resource('/pembukuan', PembukuanController::class);
