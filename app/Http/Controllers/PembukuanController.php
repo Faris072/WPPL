@@ -18,7 +18,11 @@ class PembukuanController extends Controller
 
         return view('pembukuan', [
             'css2' => '',
-            'datas' => $datas
+            'datas' => $datas,
+            'css' => '/css/body.css',
+            'title' => 'Pembukuan',
+            'js' => 'cdnjs.js',
+            'ckeditor' => ''
         ]);
     }
 
@@ -32,6 +36,9 @@ class PembukuanController extends Controller
         $model = new pembukuan;
         return view('create', [
             'model' => $model,
+            'title' => 'Tambah Pembukuan',
+            'css' => '/css/pembukuan.css',
+            'js' => 'cdnjs.js'
         ]);
     }
 

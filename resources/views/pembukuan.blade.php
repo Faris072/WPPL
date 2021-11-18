@@ -6,7 +6,7 @@
 </br></br>
 <a class="btn btn-info" href="{{ url('pembukuan/create') }}">Tambah</a>
 <table class='table table-striped' border='1' cellpadding='10'>
-<thead>    
+<thead>
     <tr>
         <th>Tanggal</th>
         <th>Uraian</th>

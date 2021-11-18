@@ -26,7 +26,8 @@ Route::get('/dashboard', function () {
         'title' => 'dashboard',
         'css' => 'css/body.css',
         'css2' => '',
-        'js' => 'js/body.js'
+        'js' => 'js/body.js',
+        'ckeditor' => 'test'
     ]);
 });
 

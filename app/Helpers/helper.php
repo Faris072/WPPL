@@ -1,5 +1,5 @@
 <?php
-$koneksi=mysqli_connect('localhost','root','','final_project');
+$koneksi=mysqli_connect('localhost','root','','project-akhir-wabw');
 function ambilData($koneksi){
     $sql = "SELECT * FROM pembukuans ORDER BY id DESC LIMIT 1";
     $query = mysqli_query($koneksi,$sql);
