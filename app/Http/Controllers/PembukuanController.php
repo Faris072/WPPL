@@ -14,7 +14,12 @@ class PembukuanController extends Controller
      */
     public function index()
     {
-        //
+        $datas = pembukuan::all();
+
+        return view('pembukuan', [
+            'css2' => '',
+            'datas' => $datas
+        ]);
     }
 
     /**
@@ -24,7 +29,10 @@ class PembukuanController extends Controller
      */
     public function create()
     {
-        //
+        $model = new pembukuan;
+        return view('create', [
+            'model' => $model,
+        ]);
     }
 
     /**
@@ -35,7 +43,16 @@ class PembukuanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $koneksi=mysqli_connect('localhost','root','','final_project');
+        $model = new pembukuan;
+        $model->tanggal = $request->tanggal;
+        $model->uraian = $request->uraian;
+        $model->debit = $request->debit;
+        $model->kredit = $request->kredit;
+        $model->saldo = ambilData($koneksi) + $request->debit - $request->kredit;
+        $model->save();
+
+        return redirect('pembukuan');
     }
 
     /**

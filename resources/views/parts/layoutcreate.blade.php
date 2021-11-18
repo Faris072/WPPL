@@ -17,44 +17,11 @@
     <!--Font Google-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="body.css">
-    <link rel="stylesheet" href="{{ $css2 }}">
 </head>
 <body>
-
-    <div class="container-fluid-xl">
-        <div class="sidebar">
-            <div class="profil p-4 mb-3" style="border-bottom:1px solid white;">
-                <center>
-                    <img src="storage/default/faris.jpg" alt="" class="rounded-circle" width="60%">
-                    <br>
-                    <div class="dataprofi pt-4" style="color:white;">
-                        <h5>Nama</h5>
-                        <h6>status</h6>
-                    </div>
-                </center>
-            </div>
-            <ul>
-                <li><a href="#">sidebar</a></li>
-                <li><a href="#">sidebar</a></li>
-                <li><a href="#">sidebar</a></li>
-                <li><a href="#">sidebar</a></li>
-                <li><a href="#">sidebar</a></li>
-                <li><a href="#">sidebar</a></li>
-            </ul>
-        </div>
-
-        <div class="container-fluid-xl" id="isi">
-            <div class="container pt-3">
-                @yield('body')
-            </div>
-        </div>
-
+    <div class="container pt-3">
+        @yield('body')
     </div>
-    <div class="mode">
-        <button class="rounded-circle btn btn-dark" id="btnmode"><i class="fas fa-moon fa-2x" style="color:yellow;"></i></button>
-    </div>
-
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"

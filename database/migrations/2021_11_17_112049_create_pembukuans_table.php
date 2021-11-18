@@ -15,6 +15,11 @@ class CreatePembukuansTable extends Migration
     {
         Schema::create('pembukuans', function (Blueprint $table) {
             $table->id();
+            $table->date('tanggal');
+            $table->string('uraian');
+            $table->bigInteger('debit')->nullable();
+            $table->bigInteger('kredit')->nullable();
+            $table->bigInteger('saldo')->nullable();
             $table->timestamps();
         });
     }
