@@ -18,7 +18,6 @@ Kelompok 6:
 
 ##Pembagian tugas project
 -Front end development:
- 1. sopo ya
 
 -back end development:
 
@@ -29,7 +28,7 @@ Kelompok 6:
 - jika sudah melakukan cara di atas maka selanjutnya anda cloning project di github ke komputer anda dengan mengetikkan perintah `git clone {url github}`
 - cek apakah sudah di init atau belum. cara mengetahui sudah di initialisasi atau belum adalah jika sudah di inisialisasi akan ada `(nama branch)` setelah path folder project anda di terminal git bash.
 - jika belum ada maka anda harus initials dulu folder tersebut dengan perintah `git init`.
-- untuk menghapus semua git repo dan membatalkan init maka ketikkan `rm -rf .git`
+- untuk menghapus semua git repo dan membatalkan init maka ketikkan `rm -rf .git`.
 - cara membuat branch di git adlah dengan perintah `git branch {nama branch}`. 
 - cara berpindah branch adalah dengan mengetikkan perintah `git checkout {nama branch}`.
 - untuk commit jika setiap ada file baru harus menggunakan `git add .` dulu lalu `git commit -m "{pesan commit}"`.

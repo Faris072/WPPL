@@ -14,5 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome' , [
+        'title' => 'Homepage | Selamat datang!',
+        'css' => 'css/homepage.css'
+    ]);
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard', [
+        'title' => 'dashboard',
+        'css' => 'css/body.css',
+        'css2' => '',
+        'js' => 'js/body.js'
+    ]);
+});
+
+
+Route::resource('/register', 'App\Http\Controllers\userController');
