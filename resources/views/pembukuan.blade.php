@@ -24,7 +24,7 @@
                     <td>{{ $value->debit }}</td>
                     <td>{{ $value->kredit }}</td>
                     <td>{{ $value->saldo }}</td>
-                    <td><a class="btn btn-outline-warning" href="{{ url('pembukuan/' . $value->id . '/edit') }}">Edit</a>
+                    <td><a class="btn btn-warning" href="pembukuan/{{ $value->id }}/edit">Edit</a>
                     </td>
                     <td>
                         <!-- Button trigger modal -->

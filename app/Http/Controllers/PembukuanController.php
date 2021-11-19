@@ -21,7 +21,7 @@ class PembukuanController extends Controller
             'datas' => $datas,
             'css' => '/css/body.css',
             'title' => 'Pembukuan',
-            'js' => 'cdnjs.js',
+            'js' => 'js/body.js',
             'ckeditor' => ''
         ]);
     }
@@ -38,7 +38,7 @@ class PembukuanController extends Controller
             'model' => $model,
             'title' => 'Tambah Pembukuan',
             'css' => '/css/pembukuan.css',
-            'js' => 'cdnjs.js'
+            'js' => '/js/body.js'
         ]);
     }
 
@@ -82,9 +82,14 @@ class PembukuanController extends Controller
      * @param  \App\Models\pembukuan  $pembukuan
      * @return \Illuminate\Http\Response
      */
-    public function edit(pembukuan $pembukuan)
+    public function edit($id)
     {
-        //
+        $edit = pembukuan::find($id);
+        return view('updatepembukuan',[
+            'data' => $edit,
+            'js' => '/js/body.js'
+
+        ]);
     }
 
     /**
@@ -94,9 +99,9 @@ class PembukuanController extends Controller
      * @param  \App\Models\pembukuan  $pembukuan
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, pembukuan $pembukuan)
+    public function update(Request $request, $id)
     {
-        //
+        pembukuan::where('id', $id) -> update($request->all());
     }
 
     /**
