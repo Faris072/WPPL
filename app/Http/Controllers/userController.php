@@ -18,7 +18,8 @@ class userController extends Controller
             'title' => 'Register Page',
             'css' => '',
             'css2' => '',
-            'js' => ''
+            'js' => '',
+            'ckeditor' => ''
         ]);
     }
 

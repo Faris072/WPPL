@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PembukuanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,9 +26,16 @@ Route::get('/dashboard', function () {
         'title' => 'dashboard',
         'css' => 'css/body.css',
         'css2' => '',
-        'js' => 'js/body.js'
+        'js' => 'js/body.js',
+        'ckeditor' => 'test'
     ]);
 });
 
 
 Route::resource('/register', 'App\Http\Controllers\userController');
+
+Route::resource('/pembukuan', PembukuanController::class);
+
+Route::get('/test', function () {
+    return view('test');
+});
