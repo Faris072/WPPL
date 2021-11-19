@@ -58,11 +58,11 @@ class PembukuanController extends Controller
         ]);
 
         $koneksi=mysqli_connect('localhost','root','','project-akhir-wabw');
-        $validatedData['saldo'] = ambilData($koneksi) + $request->debit - $request->kredit;
+        $validatedData['saldo'] = insertSaldo($koneksi,$request->debit,$request->kredit);
         pembukuan::create($validatedData);
 
 
-        return redirect('pembukuan');
+        return redirect('/pembukuan');
     }
 
     /**
@@ -101,7 +101,16 @@ class PembukuanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        pembukuan::where('id', $id) -> update($request->all());
+        $koneksi=mysqli_connect('localhost','root','','project-akhir-wabw');
+        pembukuan::where('id', $id) -> update([
+            'tanggal' => $request->tanggal,
+            'uraian' => $request->uraian,
+            'debit' => $request->debit,
+            'kredit' => $request->kredit,
+            'saldo' => insertSaldo($koneksi,$request->debit,$request->kredit)
+        ]);
+
+        return redirect('/pembukuan');
     }
 
     /**

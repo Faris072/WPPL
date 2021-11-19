@@ -3,8 +3,9 @@
 @section('body')
 </br>
 <legend><h2>update data</h2></legend>
-<form method="POST" action="/pembukuan">
+<form method="POST" action="/pembukuan/{{ $data->id }}">
     @csrf
+    @method('PUT')
     <label>Tanggal: </label></br>
     <input type="date" name="tanggal" value="{{ $data->tanggal }}"></br>
     <label>Uraian: </label></br>
