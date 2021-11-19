@@ -50,14 +50,17 @@ class PembukuanController extends Controller
      */
     public function store(Request $request)
     {
-        $koneksi=mysqli_connect('localhost','root','','final_project');
-        $model = new pembukuan;
-        $model->tanggal = $request->tanggal;
-        $model->uraian = $request->uraian;
-        $model->debit = $request->debit;
-        $model->kredit = $request->kredit;
-        $model->saldo = ambilData($koneksi) + $request->debit - $request->kredit;
-        $model->save();
+        $validatedData = $request->validate([
+            'tanggal' => 'required',
+            'uraian' => 'required',
+            'debit' => '',
+            'kredit' => ''
+        ]);
+
+        $koneksi=mysqli_connect('localhost','root','','project-akhir-wabw');
+        $validatedData['saldo'] = ambilData($koneksi) + $request->debit - $request->kredit;
+        pembukuan::create($validatedData);
+
 
         return redirect('pembukuan');
     }
@@ -102,8 +105,10 @@ class PembukuanController extends Controller
      * @param  \App\Models\pembukuan  $pembukuan
      * @return \Illuminate\Http\Response
      */
-    public function destroy(pembukuan $pembukuan)
+    public function destroy($id)
     {
-        //
+        pembukuan::destroy($id);
+
+        return redirect('/pembukuan');
     }
 }
