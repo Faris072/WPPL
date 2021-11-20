@@ -5,7 +5,7 @@
     <h1 align='center'>Pembukuan</h1>
     </br></br>
     <a class="btn btn-info" href="{{ url('pembukuan/create') }}">Tambah</a>
-    <table class='table table-striped' border='1' cellpadding='10'>
+    <table class='table table-striped' border='1' cellpadding='10' style='positon:static;'>
         <thead>
             <tr>
                 <th>Tanggal</th>
@@ -31,9 +31,100 @@
                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDeletePembukuan">
                             DELETE
                         </button>
+                        @include('parts/modal')
                     </td>
                 </tr>
             </tbody>
         @endforeach
     </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
 @endsection

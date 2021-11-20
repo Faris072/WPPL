@@ -5,6 +5,7 @@
     @include('parts/cdnbootstrap')
 </head>
 
+<body>
     @include('parts/navbar')
 
     <div class="container-fluid-xl">
@@ -21,7 +22,6 @@
         <button class="rounded-circle btn btn-dark" id="btnmode"><i class="fas fa-moon fa-2x" style="color:yellow;"></i></button>
     </div>
 
-    @include('parts/modal')
     @include('parts/cdnjs')
 
 </body>

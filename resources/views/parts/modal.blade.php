@@ -9,8 +9,8 @@
                 </button>
             </div>
             <div class="modal-body">
-                Dengan menghapus data ini, maka saldo setelah data ini akan disesuaikan 
-            </div>
+                Dengan menghapus data ini, maka saldo setelah data ini akan disesuaikan
+             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 <form action="pembukuan/{{ $value->id }}" method="POST">

@@ -59,8 +59,8 @@ class PembukuanController extends Controller
 
         $koneksi=mysqli_connect('localhost','root','','project-akhir-wabw');
         $validatedData['saldo'] = insertSaldo($koneksi,$request->debit,$request->kredit);
+        // @dd($validatedData);
         pembukuan::create($validatedData);
-
 
         return redirect('/pembukuan');
     }
@@ -107,7 +107,7 @@ class PembukuanController extends Controller
             'uraian' => $request->uraian,
             'debit' => $request->debit,
             'kredit' => $request->kredit,
-            'saldo' => insertSaldo($koneksi,$request->debit,$request->kredit)
+            'saldo' => updateSaldo($koneksi,$request->debit,$request->kredit)
         ]);
 
         return redirect('/pembukuan');
