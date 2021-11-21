@@ -1,7 +1,7 @@
 <?php
 $koneksi=mysqli_connect('localhost','root','','project-akhir-wabw');
 function updateSaldo($koneksi,$requestDebit,$requestKredit){
-    $sql = "SELECT * FROM pembukuans WHERE id < (SELECT * FROM pembukuans HAVING MAX(id)) ORDER BY id DESC LIMIT 1";
+    $sql = "SELECT * FROM pembukuans WHERE id < (SELECT MAX(id) FROM pembukuans) ORDER BY id DESC LIMIT 1";
     $query = mysqli_query($koneksi,$sql);
     if ($query){
         $x = mysqli_fetch_array($query);
@@ -26,7 +26,7 @@ function insertSaldo($koneksi,$requestDebit,$requestKredit){
         }
         else{
             if(isset($requestKredit)){
-                return redirect('/pembukuan');
+                ?> <script>swal("Deposit Gagal", "Pastikan saldo anda cukup", "danger");</script> <?php
             }
             else{
                 return $requestDebit;
@@ -34,6 +34,5 @@ function insertSaldo($koneksi,$requestDebit,$requestKredit){
         }
     }
     else
-        return redirect('/pembukuan',['pesan'=>'Kesalahan server!']);
+    ?> <script>swal("Kesalahan Server", "Mohon maaf", "danger");</script> <?php
 }
-
