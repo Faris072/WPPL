@@ -7,11 +7,7 @@ use Illuminate\Http\Request;
 
 class PembukuanController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
         $datas = pembukuan::all();
@@ -26,11 +22,6 @@ class PembukuanController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $model = new pembukuan;
@@ -42,12 +33,7 @@ class PembukuanController extends Controller
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -57,68 +43,41 @@ class PembukuanController extends Controller
             'kredit' => ''
         ]);
 
-        $koneksi=mysqli_connect('localhost','root','','project-akhir-wabw');
-        $validatedData['saldo'] = insertSaldo($koneksi,$request->debit,$request->kredit);
+        $validatedData['saldo'] = insertSaldo($request->debit,$request->kredit);
         // @dd($validatedData);
         pembukuan::create($validatedData);
 
         return redirect('/pembukuan');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\pembukuan  $pembukuan
-     * @return \Illuminate\Http\Response
-     */
     public function show(pembukuan $pembukuan)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\pembukuan  $pembukuan
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $edit = pembukuan::find($id);
         return view('updatepembukuan',[
             'data' => $edit,
             'js' => '/js/body.js'
-
         ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\pembukuan  $pembukuan
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, $id)
     {
-        $koneksi=mysqli_connect('localhost','root','','project-akhir-wabw');
         pembukuan::where('id', $id) -> update([
-            'tanggal' => $request->tanggal,
-            'uraian' => $request->uraian,
-            'debit' => $request->debit,
-            'kredit' => $request->kredit,
-            'saldo' => updateSaldo($koneksi,$request->debit,$request->kredit)
+        'tanggal' => $request->tanggal,
+        'uraian' => $request->uraian,
+        'debit' => $request->debit,
+        'kredit' => $request->kredit,
+        'saldo' => updateSaldo($request->debit,$request->kredit,$id)
         ]);
-
         return redirect('/pembukuan');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\pembukuan  $pembukuan
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
         pembukuan::destroy($id);
