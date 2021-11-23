@@ -26,6 +26,7 @@ Kelompok 6:
 ##Cara menggunakan github
 - pastikan anda sudah menjadi colaborate dengan klik link yang sudah di bagikan di grub whatsapp atau anda bisa fork ke akun anda (lebih disarankan menjadi colaborate)
 - jika sudah melakukan cara di atas maka selanjutnya anda cloning project di github ke komputer anda dengan mengetikkan perintah `git clone {url github}`
+- INGAT! setelah clone, ketik di terminal `composer install` supaya artisan bisa berjalan dan migrate database. nama database `project-akhir-wawbw`. 
 - cek apakah sudah di init atau belum. cara mengetahui sudah di initialisasi atau belum adalah jika sudah di inisialisasi akan ada `(nama branch)` setelah path folder project anda di terminal git bash.
 - jika belum ada maka anda harus initials dulu folder tersebut dengan perintah `git init`.
 - untuk menghapus semua git repo dan membatalkan init maka ketikkan `rm -rf .git`.
