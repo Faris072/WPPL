@@ -13,7 +13,8 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $table = 'user';
-    protected $guarded = ['id'];
+
+    protected $fillable = ['id','username','email','phone','password','admin'];
 
     /**
      * The attributes that should be hidden for serialization.

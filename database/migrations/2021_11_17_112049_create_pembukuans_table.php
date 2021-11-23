@@ -14,7 +14,8 @@ class CreatePembukuansTable extends Migration
     public function up()
     {
         Schema::create('pembukuans', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_pembukuans');
+            $table->bigInteger('id_repo');
             $table->date('tanggal');
             $table->string('uraian');
             $table->bigInteger('debit')->nullable();

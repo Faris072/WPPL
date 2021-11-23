@@ -17,8 +17,8 @@ class User extends Migration
             $table->id();
             $table->string('username');
             $table->string('email')->unique();
-            $table->bigInteger('phone')->nullable();
-            $table->string('password', 1000)->unique();
+            $table->string('phone')->nullable();
+            $table->string('password', 1000);
             $table->boolean('admin');
             $table->timestamp('last_used_at')->nullable();
             $table->timestamps();
@@ -32,6 +32,6 @@ class User extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('user');
     }
 }

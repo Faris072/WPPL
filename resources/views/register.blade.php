@@ -28,7 +28,7 @@
                 <small style="color:red;" >@error('username') {{ $message }} @enderror</small>
                 <br>
                 <label for="phone">Phone: <span style="color:red;">*</span></label>
-                <input type="phone" name="phone" id="phone" class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone') }}" placeholder="Masukkan No.Telfon anda" required>
+                <input type="text" name="phone" id="phone" class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone') }}" placeholder="Masukkan No.Telfon anda" required>
                 <small style="color:red;" >@error('phone') {{ $message }} @enderror</small>
                 <br>
                 <label for="password">Password: <span style="color:red;">*</span></label>

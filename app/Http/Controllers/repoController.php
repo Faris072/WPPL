@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\user;
+use App\Models\repo;
 use Illuminate\Http\Request;
 
-class userController extends Controller
+class repoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,13 +14,7 @@ class userController extends Controller
      */
     public function index()
     {
-        return view('register', [
-            'title' => 'Register Page',
-            'css' => '',
-            'css2' => '',
-            'js' => '',
-            'ckeditor' => ''
-        ]);
+        //
     }
 
     /**
@@ -38,36 +32,19 @@ class userController extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
-    */
+     */
     public function store(Request $request)
     {
-
-        $request['admin'] = false;
-        $request['id'] = mt_rand(10000,99999);
-
-        $validatedData = $request->validate([
-            'id' => 'required|max:10',
-            'email' => 'required|email:dns|max:255|min:12',
-            'username' => 'required|max:255|min:5',
-            'phone' => '',
-            'password' => 'required_with:password2|same:password2|min:8|max:255',
-            'admin' => 'required'
-        ]);
-
-        $validatedData['password'] = bcrypt($validatedData['password']);
-
-        User::create($validatedData);
-
-        return redirect('/login');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\user  $user
+     * @param  \App\Models\repo  $repo
      * @return \Illuminate\Http\Response
      */
-    public function show(user $user)
+    public function show(repo $repo)
     {
         //
     }
@@ -75,10 +52,10 @@ class userController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\user  $user
+     * @param  \App\Models\repo  $repo
      * @return \Illuminate\Http\Response
      */
-    public function edit(user $user)
+    public function edit(repo $repo)
     {
         //
     }
@@ -87,10 +64,10 @@ class userController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\user  $user
+     * @param  \App\Models\repo  $repo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, user $user)
+    public function update(Request $request, repo $repo)
     {
         //
     }
@@ -98,10 +75,10 @@ class userController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\user  $user
+     * @param  \App\Models\repo  $repo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(user $user)
+    public function destroy(repo $repo)
     {
         //
     }

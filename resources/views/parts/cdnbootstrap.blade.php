@@ -25,5 +25,5 @@
 <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 
 <!-- CSS -->
-<link rel="stylesheet" href="{{ $css }}">
+<link rel="stylesheet" href="/css/body.css">
 <link rel="stylesheet" href="{{ $css2 }}">
