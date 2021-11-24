@@ -16,23 +16,22 @@ class User extends Authenticatable
 
     protected $fillable = ['id','username','email','phone','password','admin'];
 
-    /**
-     * The attributes that should be hidden for serialization.
-     *
-     * @var array
-     */
+    protected $primaryKey = 'id';
+
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array
-     */
+
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    //menghubungkan database  user ke database repo
+    public function repo(){
+        return $this->hasMany(repo::class);
+    }
+
 }
 

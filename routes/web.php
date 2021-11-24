@@ -29,15 +29,7 @@ Route::post('/login/authenticate','App\Http\Controllers\loginController@authenti
 //di App/Http/Middleware/Authenticate.php
 Route::post('/logout',[loginController::class,'logout'])->middleware('auth');
 
-Route::get('/dashboard', function () {
-    return view('dashboard', [
-        'title' => 'dashboard',
-        'css' => 'css/body.css',
-        'css2' => '',
-        'js' => 'js/body.js',
-        'ckeditor' => 'test'
-    ]);
-})->middleware('auth');
+Route::get('/dashboard','App\Http\Controllers\repoController@index')->middleware('auth');
 
 Route::resource('/dashboard/repo','repoController')->middleware('auth');
 Route::resource('/dashboard/repo/pembukuan', PembukuanController::class)->middleware('auth');

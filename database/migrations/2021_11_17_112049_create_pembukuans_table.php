@@ -15,12 +15,14 @@ class CreatePembukuansTable extends Migration
     {
         Schema::create('pembukuans', function (Blueprint $table) {
             $table->id('id_pembukuans');
-            $table->bigInteger('id_repo');
+            $table->unsignedBigInteger('id_repo');
+            $table->foreign('id_repo')->references('id_repo')->on('repo');
             $table->date('tanggal');
             $table->string('uraian');
             $table->bigInteger('debit')->nullable();
             $table->bigInteger('kredit')->nullable();
             $table->bigInteger('saldo')->nullable();
+            $table->timestamp('last_used_at')->nullable();
             $table->timestamps();
         });
     }

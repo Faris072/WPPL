@@ -11,4 +11,14 @@ class repo extends Model
 
     protected $table = 'repo';
 
+    protected $primaryKey = 'id_repo';
+
+    public function User(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function pembukuan(){
+        return $this->hasMany(pembukuan::class);
+    }
+
 }

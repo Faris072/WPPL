@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\repo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class repoController extends Controller
 {
@@ -14,7 +15,16 @@ class repoController extends Controller
      */
     public function index()
     {
-        //
+        $id = Auth::user()->id;//mendapatkan id dari user yang login
+        $repository = repo::all()->where('id', $id);//mendapatkan semua kolom berdasarkan id = id dari user yg login
+        return view('dashboard', [
+            'title' => 'dashboard',
+            'css' => 'css/body.css',
+            'css2' => '',
+            'js' => 'js/body.js',
+            'ckeditor' => 'test',
+            'repository' => $repository
+        ]);
     }
 
     /**

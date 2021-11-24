@@ -8,5 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class pembukuan extends Model
 {
     use HasFactory;
-    protected $guarded = ['id'];
+    protected $primaryKey = 'id_pembukuans';
+
+    public function repo(){
+        $this->belongsTo(repo::class);
+    }
 }
