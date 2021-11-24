@@ -4,7 +4,7 @@
     </br>
     <h1 align='center'>Pembukuan</h1>
     </br></br>
-    <a class="btn btn-info" href="{{ url('pembukuan/create') }}">Tambah</a>
+    <a class="btn btn-info" href="/pembukuan/{{ $idRepo }}/create">Tambah</a>
     <table class='table table-striped' border='1' cellpadding='10' style='positon:static;'>
         <thead>
             <tr>
@@ -47,7 +47,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <form action="pembukuan/{{ $value->id }}" method="POST">
+                                        <form action="pembukuan/{{ $idRepo }}/{{ $value->id }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <input type="submit" class="btn btn-danger" type="submit" value="Tetap Hapus">

@@ -29,27 +29,31 @@ function updateSaldo($requestDebit,$requestKredit,$id){
 }
 
 
-function insertSaldo($requestDebit,$requestKredit){
-    $sql = "SELECT * FROM pembukuans ORDER BY id DESC LIMIT 1";
+function insertSaldo($idRepo,$requestDebit,$requestKredit){
+    $sql = "SELECT MAX(id) FROM pembukuans WHERE id_repo =".$idRepo;
     $query = mysqli_query(koneksi(),$sql);
     if ($query){
-        $x = mysqli_fetch_array($query);
-        if(isset($x['saldo'])){
-            $data = $x['saldo'];
-            $data = $data + $requestDebit - $requestKredit;
-            return $data;
-        }
-        else{
-            if(isset($requestKredit)){
-                return ?> <script>swal("Deposit Gagal", "Pastikan saldo anda cukup", "danger");</script> <?php
+        if(($x = mysqli_fetch_array($query))){
+            if(isset($x['saldo'])){
+                $data = $x['saldo'];
+                $data = $data + $requestDebit - $requestKredit;
+                return $data;
             }
             else{
-                return $requestDebit;
+                if(isset($requestKredit)){
+                    return ?> <script>swal("Deposit Gagal", "Pastikan saldo anda cukup", "danger");</script> <?php
+                }
+                else{
+                    return $requestDebit;
+                }
             }
+        }
+        else{
+            return $requestDebit;
         }
     }
     else
-    ?> <script>swal("Kesalahan Server", "Mohon maaf", "danger");</script> <?php
+        return $requestDebit;
 }
 
 

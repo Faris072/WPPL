@@ -29,10 +29,15 @@ Route::post('/login/authenticate','App\Http\Controllers\loginController@authenti
 //di App/Http/Middleware/Authenticate.php
 Route::post('/logout',[loginController::class,'logout'])->middleware('auth');
 
-Route::get('/dashboard','App\Http\Controllers\repoController@index')->middleware('auth');
+Route::resource('/dashboard','App\Http\Controllers\repoController')->middleware('auth');
 
-Route::resource('/dashboard/repo','repoController')->middleware('auth');
-Route::resource('/dashboard/repo/pembukuan', PembukuanController::class)->middleware('auth');
+Route::get('/pembukuan/{idRepo}', 'App\Http\Controllers\PembukuanController@index')->middleware('auth');
+Route::get('/pembukuan/{idRepo}/create', 'App\Http\Controllers\PembukuanController@create')->middleware('auth');
+Route::post('/pembukuan/{idRepo}', 'App\Http\Controllers\PembukuanController@store')->middleware('auth');
+Route::get('/pembukuan/{idBuku}/edit', 'App\Http\Controllers\PembukuanController@edit')->middleware('auth');
+Route::put('/pembukuan/{idBuku}', 'App\Http\Controllers\PembukuanController@update')->middleware('auth');
+Route::delete('/pembukuan/{idRepo}/{idBuku}', 'App\Http\Controllers\PembukuanController@destroy')->middleware('auth');
+// Route::resource('/pembukuan', 'App\Http\Controllers\PembukuanController')->middleware('auth');
 
 Route::get('/test', function () {
     return view('test');

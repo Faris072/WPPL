@@ -10,7 +10,7 @@
         </center>
     </div>
     <ul>
-        <li><a href="#">sidebar</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
         <li><a href="#">sidebar</a></li>
         <li><a href="#">sidebar</a></li>
         <li><a href="#">sidebar</a></li>

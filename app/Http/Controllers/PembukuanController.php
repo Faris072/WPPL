@@ -4,17 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Models\pembukuan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\repo;
 
 class PembukuanController extends Controller
 {
 
-    public function index()
+    public function index($idRepo)
     {
-        $datas = pembukuan::all();
+        $id = Auth::user()->id;
+        // $idRepo = repo::select('id_repo')->where('id', $id);//select untuk memilih beberapa kolom
+        $datas = pembukuan::all()->where('id_repo',$idRepo);
 
         return view('pembukuan', [
             'css2' => '',
             'datas' => $datas,
+            'idRepo' => $idRepo,
             'css' => '/css/body.css',
             'title' => 'Pembukuan',
             'js' => 'js/body.js',
@@ -22,11 +27,12 @@ class PembukuanController extends Controller
         ]);
     }
 
-    public function create()
+    public function create($idRepo)
     {
         $model = new pembukuan;
         return view('create', [
             'model' => $model,
+            'idRepo' => $idRepo,
             'title' => 'Tambah Pembukuan',
             'css' => '/css/pembukuan.css',
             'js' => '/js/body.js'
@@ -34,20 +40,24 @@ class PembukuanController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function store(Request $request,$idRepo)
     {
+        $request['id_repo'] = $idRepo;
+        $request['id_pembukuans'] = mt_rand(1000000000,9999999999);
         $validatedData = $request->validate([
+            'id_repo' => '',
+            'id_pembukuans' => '',
             'tanggal' => 'required',
             'uraian' => 'required',
             'debit' => '',
             'kredit' => ''
         ]);
 
-        $validatedData['saldo'] = insertSaldo($request->debit,$request->kredit);
-        // @dd($validatedData);
+        $validatedData['saldo'] = insertSaldo($idRepo,$request->debit,$request->kredit);
         pembukuan::create($validatedData);
 
-        return redirect('/pembukuan');
+        $redirect = 'pembukuan/'.$idRepo;
+        return redirect($redirect);
     }
 
     public function show(pembukuan $pembukuan)
@@ -55,9 +65,9 @@ class PembukuanController extends Controller
         //
     }
 
-    public function edit($id)
+    public function edit($idRepo,$idBuku)
     {
-        $edit = pembukuan::find($id);
+        $edit = pembukuan::find($idBuku);
         return view('updatepembukuan',[
             'data' => $edit,
             'js' => '/js/body.js'
@@ -65,23 +75,24 @@ class PembukuanController extends Controller
     }
 
 
-    public function update(Request $request, $id)
+    public function update(Request $request, $idBuku)
     {
-        pembukuan::where('id', $id) -> update([
+        pembukuan::where('id', $idBuku) -> update([
         'tanggal' => $request->tanggal,
         'uraian' => $request->uraian,
         'debit' => $request->debit,
         'kredit' => $request->kredit,
-        'saldo' => updateSaldo($request->debit,$request->kredit,$id)
+        'saldo' => updateSaldo($request->debit,$request->kredit,$idBuku)
         ]);
         return redirect('/pembukuan');
     }
 
 
-    public function destroy($id)
+    public function destroy($idRepo,$idBuku)
     {
-        pembukuan::destroy($id);
+        pembukuan::destroy($idBuku);
 
-        return redirect('/pembukuan');
+        $redirect = 'pembukuan/'.$idRepo;
+        return redirect($redirect);
     }
 }

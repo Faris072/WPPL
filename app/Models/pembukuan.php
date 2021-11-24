@@ -10,6 +10,8 @@ class pembukuan extends Model
     use HasFactory;
     protected $primaryKey = 'id_pembukuans';
 
+    protected $fillable = ['id_pembukuans','id_repo','tanggal','uraian','debit','kredit','saldo'];
+
     public function repo(){
         $this->belongsTo(repo::class);
     }

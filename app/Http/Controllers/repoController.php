@@ -34,7 +34,12 @@ class repoController extends Controller
      */
     public function create()
     {
-        //
+        return view('createrepo', [
+            'title' => 'Add a new repository',
+            'css2' => '',
+            'js2' => '',
+            'ckeditor' => 'descrepo'
+        ]);
     }
 
     /**
@@ -45,7 +50,18 @@ class repoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request['id'] = Auth::user()->id;
+        $request['id_repo'] = mt_rand(1000000000,9999999999);
+        $validatedData = $request->validate([
+            'nama_repo' => 'required|max:50',
+            'deskripsi' => '',
+            'id' => '',
+            'id_repo' => ''
+        ]);
+
+        repo::create($validatedData);
+
+        return redirect('/dashboard');
     }
 
     /**

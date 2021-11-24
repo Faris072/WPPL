@@ -3,7 +3,7 @@
 @section('body')
 </br>
 <legend><h2>Add data</h2></legend>
-<form method="POST" action="/pembukuan">
+<form method="POST" action="/pembukuan/{{ $idRepo }}">
     @csrf
     <label>Tanggal: </label></br>
     <input type="date" name="tanggal"></br>
