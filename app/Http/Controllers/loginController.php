@@ -32,6 +32,7 @@ class loginController extends Controller
             //intended adalah mengalihkan halaman ketika sudah melewati middleware
             //middleware untuk mengechek user sudah login atau belum. jika sudah maka akan diarahkan di route yg kita inginkan
             //untuk mengatur route bisa di app/providers/RouteServiceProvider.php
+            
             return redirect()->intended('/dashboard');
         }
         //back untuk mengembalikan ke halaman sebelumnya

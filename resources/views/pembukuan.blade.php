@@ -24,16 +24,16 @@
                     <td>{{ $value->debit }}</td>
                     <td>{{ $value->kredit }}</td>
                     <td>{{ $value->saldo }}</td>
-                    <td><a class="btn btn-warning" href="pembukuan/{{ $value->id }}/edit">Edit</a>
+                    <td><a class="btn btn-warning" href="pembukuan/{{ $value->id_pembukuans }}/edit">Edit</a>
                     </td>
                     <td>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDeletePembukuan{{ $value->id }}">
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDeletePembukuan{{ $value->id_pembukuans }}">
                             DELETE
                         </button>
 
                         <!-- Modal DELETE pembukuan -->
-                        <div class="modal fade" id="modalDeletePembukuan{{ $value->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="modalDeletePembukuan{{ $value->id_pembukuans }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -43,11 +43,11 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        Dengan menghapus data pada id ini {{ $value->id }}, maka saldo setelah data ini akan disesuaikan
+                                        Dengan menghapus data pada id ini {{ $value->id_pembukuans }}, maka saldo setelah data ini akan disesuaikan
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <form action="pembukuan/{{ $idRepo }}/{{ $value->id }}" method="POST">
+                                        <form action="/pembukuan/{{ $idRepo }}/{{ $value->id_pembukuans }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <input type="submit" class="btn btn-danger" type="submit" value="Tetap Hapus">

@@ -53,7 +53,7 @@ function insertSaldo($idRepo,$requestDebit,$requestKredit){
         }
     }
     else
-        return $requestDebit;
+        return ?> <script>swal("Deposit Gagal", "Pastikan saldo anda cukup", "danger");</script> <?php
 }
 
 

@@ -91,7 +91,6 @@ class PembukuanController extends Controller
     public function destroy($idRepo,$idBuku)
     {
         pembukuan::destroy($idBuku);
-
         $redirect = 'pembukuan/'.$idRepo;
         return redirect($redirect);
     }
