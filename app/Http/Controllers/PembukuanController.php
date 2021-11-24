@@ -15,7 +15,7 @@ class PembukuanController extends Controller
         $id = Auth::user()->id;
         // $idRepo = repo::select('id_repo')->where('id', $id);//select untuk memilih beberapa kolom
         $datas = pembukuan::all()->where('id_repo',$idRepo);
-
+        $repo = repo::all()->where('id_repo', $idRepo);
         return view('pembukuan', [
             'css2' => '',
             'datas' => $datas,
@@ -23,7 +23,8 @@ class PembukuanController extends Controller
             'css' => '/css/body.css',
             'title' => 'Pembukuan',
             'js' => 'js/body.js',
-            'ckeditor' => ''
+            'ckeditor' => '',
+            'repo' => $repo
         ]);
     }
 
@@ -43,7 +44,10 @@ class PembukuanController extends Controller
     public function store(Request $request,$idRepo)
     {
         $request['id_repo'] = $idRepo;
-        $request['id_pembukuans'] = mt_rand(1000000000,9999999999);
+        if(empty(pembukuan::all()->where('id_repo',$idRepo))){
+            $request['id_pembukuans'] = mt_rand(1000000000,9999999999);
+        }
+
         $validatedData = $request->validate([
             'id_repo' => '',
             'id_pembukuans' => '',
@@ -70,21 +74,24 @@ class PembukuanController extends Controller
         $edit = pembukuan::find($idBuku);
         return view('updatepembukuan',[
             'data' => $edit,
-            'js' => '/js/body.js'
+            'js' => '/js/body.js',
+            'idRepo' => $idRepo
         ]);
     }
 
 
-    public function update(Request $request, $idBuku)
+    public function update(Request $request, $idRepo, $idBuku)
     {
-        pembukuan::where('id', $idBuku) -> update([
+        pembukuan::where('id_pembukuans', $idBuku) -> update([
         'tanggal' => $request->tanggal,
         'uraian' => $request->uraian,
         'debit' => $request->debit,
         'kredit' => $request->kredit,
-        'saldo' => updateSaldo($request->debit,$request->kredit,$idBuku)
+        'saldo' => updateSaldo($idRepo, $request->debit, $request->kredit, $idBuku)
         ]);
-        return redirect('/pembukuan');
+
+        $redirect = "/pembukuan/".$idRepo;
+        return redirect($redirect);
     }
 
 

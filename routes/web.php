@@ -34,8 +34,8 @@ Route::resource('/dashboard','App\Http\Controllers\repoController')->middleware(
 Route::get('/pembukuan/{idRepo}', 'App\Http\Controllers\PembukuanController@index')->middleware('auth');
 Route::get('/pembukuan/{idRepo}/create', 'App\Http\Controllers\PembukuanController@create')->middleware('auth');
 Route::post('/pembukuan/{idRepo}', 'App\Http\Controllers\PembukuanController@store')->middleware('auth');
-Route::get('/pembukuan/{idBuku}/edit', 'App\Http\Controllers\PembukuanController@edit')->middleware('auth');
-Route::put('/pembukuan/{idBuku}', 'App\Http\Controllers\PembukuanController@update')->middleware('auth');
+Route::get('/pembukuan/{idRepo}/{idBuku}/edit', 'App\Http\Controllers\PembukuanController@edit')->middleware('auth');
+Route::put('/pembukuan/{idRepo}/{idBuku}', 'App\Http\Controllers\PembukuanController@update')->middleware('auth');
 Route::delete('/pembukuan/{idRepo}/{idBuku}', 'App\Http\Controllers\PembukuanController@destroy')->middleware('auth');
 // Route::resource('/pembukuan', 'App\Http\Controllers\PembukuanController')->middleware('auth');
 

@@ -14,7 +14,7 @@ class CreatePembukuansTable extends Migration
     public function up()
     {
         Schema::create('pembukuans', function (Blueprint $table) {
-            $table->id('id_pembukuans');
+            $table->bigIncrements('id_pembukuans');
             $table->unsignedBigInteger('id_repo');
             $table->foreign('id_repo')->references('id_repo')->on('repo');
             $table->date('tanggal');

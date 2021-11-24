@@ -2,7 +2,10 @@
 
 @section('body')
     </br>
-    <h1 align='center'>Pembukuan</h1>
+
+    @foreach ($repo as $judul)
+        <center><h1>{{ $judul->nama_repo }}</h1></center>
+    @endforeach
     </br></br>
     <a class="btn btn-info" href="/pembukuan/{{ $idRepo }}/create">Tambah</a>
     <table class='table table-striped' border='1' cellpadding='10' style='positon:static;'>
@@ -24,7 +27,7 @@
                     <td>{{ $value->debit }}</td>
                     <td>{{ $value->kredit }}</td>
                     <td>{{ $value->saldo }}</td>
-                    <td><a class="btn btn-warning" href="pembukuan/{{ $value->id_pembukuans }}/edit">Edit</a>
+                    <td><a class="btn btn-warning" href="/pembukuan/{{ $idRepo }}/{{ $value->id_pembukuans }}/edit">Edit</a>
                     </td>
                     <td>
                         <!-- Button trigger modal -->

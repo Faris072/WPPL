@@ -1,64 +1,13 @@
 <?php
 
 function koneksi(){
-    $koneksi=mysqli_connect('localhost','root','','project-akhir-wabw');
+    $koneksi=mysqli_connect('localhost','root','','project-akhir-wabw') or die("Unable to connect");
     return $koneksi;
 }
 
 
-function updateSaldo($requestDebit,$requestKredit,$id){
-    $sql = "SELECT * FROM pembukuans WHERE id < $id ORDER BY id DESC LIMIT 1";
-    $query = mysqli_query(koneksi(),$sql);
-    if ($query){
-        if(($x = mysqli_fetch_array($query))){
-            // @dd($x);
-            if(isset($x['saldo'])){
-                $data = $x['saldo'];
-                return $data + $requestDebit - $requestKredit;
-            }
-            else{
-                return $requestDebit;
-            }
-        }
-        else{
-            return $requestDebit;
-        }
-    }
-    else
-        return 0;
-}
-
-
-function insertSaldo($idRepo,$requestDebit,$requestKredit){
-    $sql = "SELECT MAX(id) FROM pembukuans WHERE id_repo =".$idRepo;
-    $query = mysqli_query(koneksi(),$sql);
-    if ($query){
-        if(($x = mysqli_fetch_array($query))){
-            if(isset($x['saldo'])){
-                $data = $x['saldo'];
-                $data = $data + $requestDebit - $requestKredit;
-                return $data;
-            }
-            else{
-                if(isset($requestKredit)){
-                    return ?> <script>swal("Deposit Gagal", "Pastikan saldo anda cukup", "danger");</script> <?php
-                }
-                else{
-                    return $requestDebit;
-                }
-            }
-        }
-        else{
-            return $requestDebit;
-        }
-    }
-    else
-        return ?> <script>swal("Deposit Gagal", "Pastikan saldo anda cukup", "danger");</script> <?php
-}
-
-
-function banyakDataSetelah($id){
-    $sql = "SELECT * FROM pembukuan WHERE id > '$id'";
+function banyakDataSetelah($idRepo,$id){
+    $sql = "SELECT * FROM pembukuan WHERE id_repo = ".$idRepo." AND id_pembukuans > ".$id." ORDER BY id_pembukuans";
     $query = mysqli_query(koneksi(),$sql);
     if($query){
         $i=0;
@@ -73,18 +22,65 @@ function banyakDataSetelah($id){
 }
 
 
-function dataSetelah($id){
-    $sql = "SELECT id FROM pembukuan WHERE id > ".$id." ORDER BY id LIMIT 1";
+function saldoSetelah($idRepo,$id){
+    $sql = "SELECT * FROM pembukuan WHERE id_repo = ".$idRepo." AND id_pembukuans > ".$id." ORDER BY id_pembukuans LIMIT 1";
     $query = mysqli_query(koneksi(),$sql);
     if($query){
         if(($pecah = mysqli_fetch_array($query))){
-            return $pecah['id'];
+            return $pecah['saldo'];
         }
         else{
             return 0;
         }
     }
 }
+
+function saldoSebelum($idRepo,$id){
+    $sql = "SELECT * FROM pembukuans WHERE id_repo = ".$idRepo." AND id_pembukuans < ".$id." ORDER BY id_pembukuans ASC LIMIT 1";
+    $query = mysqli_query(koneksi(),$sql) or die('query gagal');
+    if($query){
+        if(($x = mysqli_fetch_array($query))){
+            return $x['saldo'];
+        }
+        else{
+            return 0;
+        }
+    }
+    else{
+        @dd('query gagal');
+    }
+
+}
+
+function saldoMax($idRepo,$requestDebit){
+    $sql = "SELECT saldo FROM pembukuans WHERE id_repo =".$idRepo." GROUP BY id_pembukuans HAVING id_pembukuans = MAX(id_pembukuans)";
+    $query = mysqli_query(koneksi(),$sql) or die('query gagal');
+    if($query){
+        if(($x = mysqli_fetch_array($query))){
+            // $x = mysqli_fetch_array($query);
+            return $x['saldo'];
+        }
+        else{
+            return 0;
+        }
+    }
+    else{
+        @dd('query gagal');
+    }
+}
+
+function updateSaldo($idRepo,$requestDebit,$requestKredit,$id){
+    $sebelum = saldoSebelum($idRepo,$id);
+    return $sebelum + $requestDebit - $requestKredit;
+}
+
+
+function insertSaldo($idRepo,$requestDebit,$requestKredit){
+    $max = saldoMax($idRepo,$requestDebit);
+    return $max + $requestDebit - $requestKredit;
+}
+
+
 
 
 // function updateRefresh(){
