@@ -7,7 +7,7 @@
         <a href="/dashboard/create" class="btn btn-success">Repsitory Baru</a>
         @foreach ($repository as $repo)
             <div class="card">
-                <h5 class="card-header">{{ $repo->nama_repo }}</h5>
+                <h5 class="card-header"> {{ $repo->nama_repo }} <span style="text-align:right;"> <a href="#">Edit</a> <a href="#">Hapus</a></span></h5>
                 <div class="card-body">
                     <p class="card-text" id="deskripsi">{{ $repo->deskripsi }}</p>
                     <br>

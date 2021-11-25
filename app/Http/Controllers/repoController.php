@@ -35,11 +35,15 @@ class repoController extends Controller
      */
     public function create()
     {
+        $auth = Auth::user();//mendapatkan id dari user yang login
+        $repository = repo::all()->where('id', $auth->id);//mendapatkan semua kolom berdasarkan id = id dari user yg login
         return view('createrepo', [
             'title' => 'Add a new repository',
             'css2' => '',
             'js2' => '',
-            'ckeditor' => 'descrepo'
+            'ckeditor' => 'descrepo',
+            'repository' => $repository,
+            'auth' => $auth
         ]);
     }
 
