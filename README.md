@@ -20,7 +20,7 @@ Kelompok 6:
 -Front end development:
 
 -back end development:
-
+.
 
 
 ##Cara menggunakan github
