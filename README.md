@@ -1,6 +1,5 @@
 ##PROJECT AKHIR WORKSHOP APLIKASI BERBASIS WEB
 
-
 Kelompok 6:
 - Bagas Prakoso (3120510109)
 - Muhammad Farhan Bilnazari (3120510103)
