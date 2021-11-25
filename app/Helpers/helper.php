@@ -36,7 +36,7 @@ function saldoSetelah($idRepo,$id){
 }
 
 function saldoSebelum($idRepo,$id){
-    $sql = "SELECT * FROM pembukuans WHERE id_repo = ".$idRepo." AND id_pembukuans < ".$id." ORDER BY id_pembukuans ASC LIMIT 1";
+    $sql = "SELECT * FROM pembukuans WHERE id_repo = ".$idRepo." AND id_pembukuans < ".$id." ORDER BY id_pembukuans DESC LIMIT 1";
     $query = mysqli_query(koneksi(),$sql) or die('query gagal');
     if($query){
         if(($x = mysqli_fetch_array($query))){
@@ -53,7 +53,7 @@ function saldoSebelum($idRepo,$id){
 }
 
 function saldoMax($idRepo,$requestDebit){
-    $sql = "SELECT saldo FROM pembukuans WHERE id_repo =".$idRepo." GROUP BY id_pembukuans HAVING id_pembukuans = MAX(id_pembukuans)";
+    $sql = "SELECT * FROM pembukuans WHERE id_repo =".$idRepo." ORDER BY id_pembukuans DESC LIMIT 1";
     $query = mysqli_query(koneksi(),$sql) or die('query gagal');
     if($query){
         if(($x = mysqli_fetch_array($query))){
