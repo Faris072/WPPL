@@ -12,10 +12,11 @@ class PembukuanController extends Controller
 
     public function index($idRepo)
     {
-        $id = Auth::user()->id;
+        $auth = Auth::user();
         // $idRepo = repo::select('id_repo')->where('id', $id);//select untuk memilih beberapa kolom
         $datas = pembukuan::all()->where('id_repo',$idRepo);
         $repo = repo::all()->where('id_repo', $idRepo);
+        $repository = repo::all()->where('id', $auth->id);
         return view('pembukuan', [
             'css2' => '',
             'datas' => $datas,
@@ -24,7 +25,9 @@ class PembukuanController extends Controller
             'title' => 'Pembukuan',
             'js' => 'js/body.js',
             'ckeditor' => '',
-            'repo' => $repo
+            'repo' => $repo,
+            'repository' => $repository,
+            'auth' => $auth
         ]);
     }
 

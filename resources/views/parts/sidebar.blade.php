@@ -11,10 +11,19 @@
     </div>
     <ul>
         <li><a href="/dashboard">Dashboard</a></li>
-        <li><a href="#">sidebar</a></li>
-        <li><a href="#">sidebar</a></li>
-        <li><a href="#">sidebar</a></li>
-        <li><a href="#">sidebar</a></li>
-        <li><a href="#">sidebar</a></li>
+        <li><a href="#">Pengaturan Profil</a></li>
+        <li><a href="#" class="collapsed" data-toggle="collapse" data-target="#daftarBuku" aria-expanded="false">Daftar Buku Saya <i class="fas fa-caret-down pl-2" style="color:white;"></i></a></li>
+        <li id="daftarBuku" class="collapse">
+            <ul>
+            @foreach($repository as $repo)
+                <li> <a href="#">{{ $repo->nama_repo }}</a> </li>
+            @endforeach
+            </ul>
+        </li>
+        <li><a href="/logout">Logout</a></li>
     </ul>
+    <br>
+    <br>
+    <br>
+    <br>
 </div>
