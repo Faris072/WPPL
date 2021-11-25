@@ -43,12 +43,14 @@ class userController extends Controller
     {
 
         $request['admin'] = false;
+        $request['id'] = mt_rand(10000,99999);
 
         $validatedData = $request->validate([
+            'id' => 'required|max:10',
             'email' => 'required|email:dns|max:255|min:12',
             'username' => 'required|max:255|min:5',
-            'password' => 'required|min:8|max:255',
-            'password2' => 'required|min:8|max:255',
+            'phone' => '',
+            'password' => 'required_with:password2|same:password2|min:8|max:255',
             'admin' => 'required'
         ]);
 
@@ -56,7 +58,7 @@ class userController extends Controller
 
         User::create($validatedData);
 
-        return redirect('/');
+        return redirect('/login');
     }
 
     /**

@@ -2,15 +2,23 @@
     /* cursor:url('../cursor/pencil.png'), auto; */
 }
 
+html{
+    overflow:hidden;
+}
+
+.modal-backdrop{
+    position:fixed;
+}
+
 .navbar{
-    position: sticky;
+    position:sticky;
     top:0;
-    z-index:999;
+    z-index:90;
     box-shadow: 0px -3px 20px rgb(0, 0, 0);
 }
 
 .sidebar{
-    position:fixed;
+    position:absolute;
     width:20%;
     height:100vh;
     overflow-y:auto;
@@ -46,7 +54,7 @@
 }
 
 #isi{
-    position:fixed;
+    position:absolute;
     width:80%;
     height:100vh;
     overflow-y:auto;

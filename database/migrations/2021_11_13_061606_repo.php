@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class User extends Migration
+class Repo extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class User extends Migration
      */
     public function up()
     {
-        Schema::create('user', function (Blueprint $table) {
-            $table->id('id');
-            $table->string('username');
-            $table->string('email')->unique();
-            $table->string('phone')->nullable();
-            $table->string('password', 1000);
-            $table->boolean('admin');
+        Schema::create('repo', function (Blueprint $table) {
+            $table->id('id_repo');
+            $table->unsignedBigInteger('id');//membuat kolom id yang siap dijadikan foreign key
+            $table->foreign('id')->references('id')->on('user');//menjadikan id sebagai foreign key
+            $table->string('nama_repo',50);
+            $table->string('deskripsi',2000)->nullable();
             $table->timestamp('last_used_at')->nullable();
             $table->timestamps();
         });
@@ -32,6 +31,6 @@ class User extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user');
+        Schema::dropIfExists('repo');
     }
 }

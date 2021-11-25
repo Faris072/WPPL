@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PembukuanController;
+use App\Http\Controllers\loginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,23 +20,28 @@ Route::get('/', function () {
         'title' => 'Homepage | Selamat datang!',
         'css' => 'css/homepage.css'
     ]);
-});
+})->middleware('guest');
 
-Route::get('/dashboard', function () {
-    return view('dashboard', [
-        'title' => 'dashboard',
-        'css' => 'css/body.css',
-        'css2' => '',
-        'js' => 'js/body.js',
-        'ckeditor' => 'test'
-    ]);
-});
+Route::resource('/register', 'App\Http\Controllers\userController')->middleware('guest');
+Route::get('/login', 'App\Http\Controllers\loginController@index')->name('login')->middleware('guest');
+Route::post('/login/authenticate','App\Http\Controllers\loginController@authenticate')->middleware('guest');
+//ketika user yang belum login masuk ke halaman yang harus login dulu maka akan diredirect di route yang telah disediakan
+//di App/Http/Middleware/Authenticate.php
+Route::post('/logout',[loginController::class,'logout'])->middleware('auth');
 
+Route::resource('/dashboard','App\Http\Controllers\repoController')->middleware('auth');
 
-Route::resource('/register', 'App\Http\Controllers\userController');
-
-Route::resource('/pembukuan', PembukuanController::class);
+Route::get('/pembukuan/{idRepo}', 'App\Http\Controllers\PembukuanController@index')->middleware('auth');
+Route::get('/pembukuan/{idRepo}/create', 'App\Http\Controllers\PembukuanController@create')->middleware('auth');
+Route::post('/pembukuan/{idRepo}', 'App\Http\Controllers\PembukuanController@store')->middleware('auth');
+Route::get('/pembukuan/{idRepo}/{idBuku}/edit', 'App\Http\Controllers\PembukuanController@edit')->middleware('auth');
+Route::put('/pembukuan/{idRepo}/{idBuku}', 'App\Http\Controllers\PembukuanController@update')->middleware('auth');
+Route::delete('/pembukuan/{idRepo}/{idBuku}', 'App\Http\Controllers\PembukuanController@destroy')->middleware('auth');
+// Route::resource('/pembukuan', 'App\Http\Controllers\PembukuanController')->middleware('auth');
 
 Route::get('/test', function () {
     return view('test');
 });
+
+
+

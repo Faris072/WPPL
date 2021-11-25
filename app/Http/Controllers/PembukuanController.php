@@ -4,111 +4,101 @@ namespace App\Http\Controllers;
 
 use App\Models\pembukuan;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\repo;
 
 class PembukuanController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $datas = pembukuan::all();
 
+    public function index($idRepo)
+    {
+        $id = Auth::user()->id;
+        // $idRepo = repo::select('id_repo')->where('id', $id);//select untuk memilih beberapa kolom
+        $datas = pembukuan::all()->where('id_repo',$idRepo);
+        $repo = repo::all()->where('id_repo', $idRepo);
         return view('pembukuan', [
             'css2' => '',
             'datas' => $datas,
+            'idRepo' => $idRepo,
             'css' => '/css/body.css',
             'title' => 'Pembukuan',
-            'js' => 'cdnjs.js',
-            'ckeditor' => ''
+            'js' => 'js/body.js',
+            'ckeditor' => '',
+            'repo' => $repo
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function create($idRepo)
     {
         $model = new pembukuan;
         return view('create', [
             'model' => $model,
+            'idRepo' => $idRepo,
             'title' => 'Tambah Pembukuan',
             'css' => '/css/pembukuan.css',
-            'js' => 'cdnjs.js'
+            'js' => '/js/body.js'
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+
+    public function store(Request $request,$idRepo)
     {
+        $request['id_repo'] = $idRepo;
+        if(empty(pembukuan::all()->where('id_repo',$idRepo))){
+            $request['id_pembukuans'] = mt_rand(1000000000,9999999999);
+        }
+
         $validatedData = $request->validate([
+            'id_repo' => '',
+            'id_pembukuans' => '',
             'tanggal' => 'required',
             'uraian' => 'required',
             'debit' => '',
             'kredit' => ''
         ]);
 
-        $koneksi=mysqli_connect('localhost','root','','project-akhir-wabw');
-        $validatedData['saldo'] = ambilData($koneksi) + $request->debit - $request->kredit;
+        $validatedData['saldo'] = insertSaldo($idRepo,$request->debit,$request->kredit);
         pembukuan::create($validatedData);
 
-
-        return redirect('pembukuan');
+        $redirect = 'pembukuan/'.$idRepo;
+        return redirect($redirect);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\pembukuan  $pembukuan
-     * @return \Illuminate\Http\Response
-     */
     public function show(pembukuan $pembukuan)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\pembukuan  $pembukuan
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(pembukuan $pembukuan)
+    public function edit($idRepo,$idBuku)
     {
-        //
+        $edit = pembukuan::find($idBuku);
+        return view('updatepembukuan',[
+            'data' => $edit,
+            'js' => '/js/body.js',
+            'idRepo' => $idRepo
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\pembukuan  $pembukuan
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, pembukuan $pembukuan)
+
+    public function update(Request $request, $idRepo, $idBuku)
     {
-        //
+        pembukuan::where('id_pembukuans', $idBuku) -> update([
+        'tanggal' => $request->tanggal,
+        'uraian' => $request->uraian,
+        'debit' => $request->debit,
+        'kredit' => $request->kredit,
+        'saldo' => updateSaldo($idRepo, $request->debit, $request->kredit, $idBuku)
+        ]);
+
+        $redirect = "/pembukuan/".$idRepo;
+        return redirect($redirect);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\pembukuan  $pembukuan
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        pembukuan::destroy($id);
 
-        return redirect('/pembukuan');
+    public function destroy($idRepo,$idBuku)
+    {
+        pembukuan::destroy($idBuku);
+        $redirect = 'pembukuan/'.$idRepo;
+        return redirect($redirect);
     }
 }
