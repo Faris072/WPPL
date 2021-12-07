@@ -12,7 +12,7 @@
                     <p class="card-text" id="deskripsi">{{ $repo->deskripsi }}</p>
                     <br>
                     <small>{{ $repo->last_used_at }}</small>
-                    <a href="/pembukuan/{{ $repo->id_repo }}" class="btn btn-primary">Buka Buku</a>
+                    <a href="/dashboard/pembukuan/{{ $repo->id_repo }}" class="btn btn-primary">Buka Buku</a>
                 </div>
             </div>
         @endforeach

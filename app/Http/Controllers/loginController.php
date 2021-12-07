@@ -32,11 +32,12 @@ class loginController extends Controller
             //intended adalah mengalihkan halaman ketika sudah melewati middleware
             //middleware untuk mengechek user sudah login atau belum. jika sudah maka akan diarahkan di route yg kita inginkan
             //untuk mengatur route bisa di app/providers/RouteServiceProvider.php
-            
+
             return redirect()->intended('/dashboard');
         }
         //back untuk mengembalikan ke halaman sebelumnya
-        //with untuk memberi session dengan nama sessionnya pada parameter pertama dan parameter kedua untuk isi session
+        //with untuk memberi flash session dengan nama sessionnya pada parameter pertama dan parameter kedua untuk isi session
+        //flash session adalah session yang hanya ada pada satu halaman saja
         return back()->with('errorLogin', 'email dan password tidak sesuai');
     }
 

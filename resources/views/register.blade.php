@@ -36,6 +36,10 @@
 </head>
 
 <body>
+    @if(session()->has('pesan'))
+    <script>swal("Login gagal!", "{{ session('pesan') }}", "error");</script>
+    @endif
+
     {{-- navbar --}}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Navbar</a>
