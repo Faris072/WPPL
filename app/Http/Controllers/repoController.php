@@ -21,7 +21,7 @@ class repoController extends Controller
             'title' => 'dashboard',
             'css' => 'css/body.css',
             'css2' => '',
-            'js' => 'js/body.js',
+            'js' => 'js/dashboard.js',
             'ckeditor' => 'test',
             'repository' => $repository,
             'auth' => $auth
@@ -40,7 +40,7 @@ class repoController extends Controller
         return view('createrepo', [
             'title' => 'Add a new repository',
             'css2' => '',
-            'js2' => '',
+            'js' => '',
             'ckeditor' => 'descrepo',
             'repository' => $repository,
             'auth' => $auth

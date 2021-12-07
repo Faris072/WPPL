@@ -13,7 +13,7 @@ class loginController extends Controller
             'title' => 'login',
             'css' => 'css/body.css',
             'css2' => '',
-            'js' => 'js/body.js',
+            'js' => '',
             'ckeditor' => ''
         ]);
     }

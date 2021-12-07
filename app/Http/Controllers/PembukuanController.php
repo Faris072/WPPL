@@ -29,7 +29,7 @@ class PembukuanController extends Controller
             'idRepo' => $idRepo,
             'css' => '/css/body.css',
             'title' => 'Pembukuan',
-            'js' => 'js/body.js',
+            'js' => '',
             'ckeditor' => '',
             'repo' => $repo,
             'repository' => $repository,
@@ -45,7 +45,7 @@ class PembukuanController extends Controller
             'idRepo' => session('idRepo'),
             'title' => 'Tambah Pembukuan',
             'css' => '/css/pembukuan.css',
-            'js' => '/js/body.js'
+            'js' => ''
         ]);
     }
 
@@ -83,7 +83,7 @@ class PembukuanController extends Controller
         $edit = pembukuan::find($idBuku);
         return view('updatepembukuan',[
             'data' => $edit,
-            'js' => '/js/body.js',
+            'js' => '',
             'idRepo' => session('idRepo')
         ]);
     }
