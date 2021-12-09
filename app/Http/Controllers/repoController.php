@@ -15,6 +15,9 @@ class repoController extends Controller
      */
     public function index()
     {
+        if(Auth::user()->admin == true){
+            return redirect('/admin');
+        }
         $auth = Auth::user();//mendapatkan id dari user yang login
         $repository = repo::all()->where('id', $auth->id);//mendapatkan semua kolom berdasarkan id = id dari user yg login
         return view('dashboard', [

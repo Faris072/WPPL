@@ -20,7 +20,12 @@
             @endforeach
             </ul>
         </li>
-        <li><a href="/logout">Logout</a></li>
+        <li>
+            <form action="/logout" method="POST">
+                @csrf
+                <button><i class='fas fa-sign-out-alt'></i> Logout</button>
+            </form>
+        </li>
     </ul>
     <br>
     <br>

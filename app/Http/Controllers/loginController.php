@@ -33,7 +33,12 @@ class loginController extends Controller
             //middleware untuk mengechek user sudah login atau belum. jika sudah maka akan diarahkan di route yg kita inginkan
             //untuk mengatur route bisa di app/providers/RouteServiceProvider.php
 
-            return redirect()->intended('/dashboard');
+            if(Auth::user()->admin == true){
+                return redirect()->intended('/admin');
+            }
+            else{
+                return redirect()->intended('/dashboard');
+            }
         }
         //back untuk mengembalikan ke halaman sebelumnya
         //with untuk memberi flash session dengan nama sessionnya pada parameter pertama dan parameter kedua untuk isi session

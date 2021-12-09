@@ -43,5 +43,7 @@ Route::get('/test', function () {
     return view('test');
 });
 
+Route::resource('/admin', 'App\Http\Controllers\adminController')->middleware('auth');
+
 
 

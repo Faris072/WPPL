@@ -17,6 +17,7 @@ class User extends Migration
             $table->id('id');
             $table->string('username');
             $table->string('email')->unique();
+            $table->string('foto');
             $table->string('phone')->nullable();
             $table->string('password', 1000);
             $table->boolean('admin');

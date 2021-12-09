@@ -74,6 +74,35 @@ html{
     border-left:1px solid white;
 }
 
+.sidebar ul li form button{
+    text-decoration:none;
+    color:white;
+    text-align:left;
+    padding:15px;
+    margin-right:10px;
+    margin-left:15px;
+    display:block;
+    border-radius:5px;
+    border-left:1px solid white;
+    background-color:rgba(59, 59, 59, 0);
+    border:none;
+    width:92%;
+}
+
+.sidebar ul li form button:hover{
+    text-decoration:none;
+    color:black;
+    padding:15px;
+    margin-right:10px;
+    margin-left:10px;
+    display:block;
+    border-radius:5px;
+    border-left:1px solid white;
+    background-color:gold;
+    border:none;
+    width:92%;
+}
+
 #isi{
     position:absolute;
     width:80%;
