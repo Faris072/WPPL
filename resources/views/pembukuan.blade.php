@@ -50,7 +50,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <form action="/dashboard/pembukuan/{{ $value->id_pembukuans }}/destroy" method="POST">
+                                        <form action="/pembukuan/{{ $value->id_pembukuans }}/destroy" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <input type="submit" class="btn btn-danger" type="submit" value="Tetap Hapus">

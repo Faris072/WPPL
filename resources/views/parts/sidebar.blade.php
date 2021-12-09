@@ -16,7 +16,7 @@
         <li id="daftarBuku" class="collapse">
             <ul>
             @foreach($repository as $repo)
-                <li> <a href="#">{{ $repo->nama_repo }}</a> </li>
+                <li> <a href="/dashboard/pembukuan/{{ $repo->id_repo }}">{{ $repo->nama_repo }}</a> </li>
             @endforeach
             </ul>
         </li>

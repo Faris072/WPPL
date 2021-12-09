@@ -8,7 +8,9 @@
         <?php $i = 0 ?>
         @foreach ($repository as $repo)
             <div class="card">
-                <h5 class="card-header"> {{ $repo->nama_repo }} <span style="text-align:right;"> <a href="#">Edit</a> <a href="#">Hapus</a></span></h5>
+                <div class="card-header">
+                    <h5 clas> {{ $repo->nama_repo }} <span style="text-align:right;"> <a href="#">Edit</a> <a href="#">Hapus</a></span></h5>
+                </div>
                 <div class="card-body">
                     <p class="card-text Hdeskripsi<?php echo $i ?>" style="display:none;">{{ $repo->deskripsi }}</p>
                     <p class="card-text deskripsi<?php echo $i ?>">{{ $repo->deskripsi }}</p>

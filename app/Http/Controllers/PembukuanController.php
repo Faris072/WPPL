@@ -89,25 +89,25 @@ class PembukuanController extends Controller
     }
 
 
-    public function update(Request $request, $idRepo, $idBuku)
+    public function update(Request $request, $idBuku)
     {
         pembukuan::where('id_pembukuans', $idBuku) -> update([
         'tanggal' => $request->tanggal,
         'uraian' => $request->uraian,
         'debit' => $request->debit,
         'kredit' => $request->kredit,
-        'saldo' => updateSaldo($idRepo, $request->debit, $request->kredit, $idBuku)
+        'saldo' => updateSaldo(session('idRepo'), $request->debit, $request->kredit, $idBuku)
         ]);
 
-        $redirect = "/pembukuan/".$idRepo;
+        $redirect = "/dashboard/pembukuan/".session('idRepo');
         return redirect($redirect);
     }
 
 
-    public function destroy($idRepo,$idBuku)
+    public function destroy($idBuku)
     {
         pembukuan::destroy($idBuku);
-        $redirect = 'pembukuan/'.$idRepo;
+        $redirect = '/dashboard/pembukuan/'.session('idRepo');
         return redirect($redirect);
     }
 }
