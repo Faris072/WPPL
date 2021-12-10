@@ -61,7 +61,7 @@ class settingController extends Controller
      * @param  \App\Models\controller  $controller
      * @return \Illuminate\Http\Response
      */
-    public function edit(user $user)
+    public function edit($user)
     {
         $dataProfil = user::find($user);
         return view('setting',[
@@ -80,10 +80,10 @@ class settingController extends Controller
      * @param  \App\Models\controller  $controller
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, user $user)
+    public function update(Request $request,$id)
     {
-        $namaAsli=$request->file('foto')->getClientOriginalName();
-        $ekstensi=$request->file('foto')->getClientOriginalExpression();
+        $namaAsli = $request->file('foto')->getClientOriginalName();
+        $ekstensi = $request->file('foto')->getClientOriginalExtension();
         $namaFoto = date('ymdHis').'.'.$ekstensi;
         $request->file('foto')->storeAs('/foto', $namaFoto);
         $validatedData = $request->validate([
@@ -93,7 +93,8 @@ class settingController extends Controller
         ]);
         $validatedData['foto'] = $namaFoto;
         $validatedData['password'] = bcrypt($validatedData['password']);
-        user::where('id',Auth::user()->id)->update($validatedData);
+        user::where('id',$id)->update($validatedData);
+        return redirect('/profil');
     }
 
     /**

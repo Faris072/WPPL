@@ -4,8 +4,14 @@
             <img src="/storage/foto/{{ Auth::user()->foto }}" alt="" class="rounded-circle" width="60%">
             <br>
             <div class="dataprofi pt-4" style="color:white;">
-                <h5>Nama</h5>
-                <h6>status</h6>
+                <h5>{{ Auth::user()->username }}</h5>
+                <h6>
+                    @if(Auth::user()->admin == true)
+                        {{ 'Admin' }}
+                    @else
+                        {{ 'User' }}
+                    @endif
+                </h6>
             </div>
         </center>
     </div>

@@ -1,8 +1,9 @@
 @extends('parts/body')
 
 @section('body')
-    <form action="/web" method="POST" encptype="multipart/form-data">
+    <form action="/profil/{{ Auth::user()->id }}" method="POST" enctype="multipart/form-data">
         @csrf
+        @method('PUT')
         <label for="foto">Foto:</label>
         <input type="file" id="foto" name="foto" class="form-control">
         <br>
