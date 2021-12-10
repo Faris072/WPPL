@@ -1,9 +1,7 @@
 <!doctype html>
 <html lang="id">
-
 <head>
     <title>{{ $title }}</title>
-
     <style>
 
     </style>
@@ -31,17 +29,16 @@
     <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ $css2 }}">
+    <link rel="stylesheet" href="/css/body.css">
+    <link rel="stylesheet" href="{{ $css }}">
 
 </head>
 
 <body>
-    @if(session()->has('pesan'))
-    <script>swal("Login gagal!", "{{ session('pesan') }}", "error");</script>
-    @endif
-
-    {{-- navbar --}}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        @auth
+        <button id="btnsidebar" style="margin-right:50px;" class="btn btn-outline-light"></button>
+        @endauth
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -95,45 +92,74 @@
 
         </div>
     </nav>
-    {{-- endnavbar --}}
 
-    <div class="container">
-        <div class="form mt-4">
-            <form action="/register" method="POST">
-                @csrf
-                <label for="email">Email: <span style="color:red;">*</span></label>
-                <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" placeholder="Masukkan email aktif disini" required>
-                <small style="color:red;" >@error('email') {{ $message }} @enderror</small>
-                <br>
-                <label for="username">Username: <span style="color:red;">*</span></label>
-                <input type="text" name="username" id="username" class="form-control @error('username') is-invalid @enderror" value="{{ old('username') }}" placeholder="Masukkan username anda" required>
-                <small style="color:red;" >@error('username') {{ $message }} @enderror</small>
-                <br>
-                <label for="phone">Phone: <span style="color:red;">*</span></label>
-                <input type="text" name="phone" id="phone" class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone') }}" placeholder="Masukkan No.Telfon anda" required>
-                <small style="color:red;" >@error('phone') {{ $message }} @enderror</small>
-                <br>
-                <label for="password">Password: <span style="color:red;">*</span></label>
-                <input type="password" name="password" id="password" class="form-control @error('password') is-invalid @enderror" placeholder="Masukkan password anda" required>
-                <small style="color:red;" >@error('password') {{ $message }} @enderror</small>
-                <br>
-                <label for="password2">Konfirmasi Password: <span style="color:red;">*</span></label>
-                <input type="password" name="password2" id="password2" class="form-control @error('password2') is-invalid @enderror" placeholder="Masukkan password anda kembali" required>
-                <small style="color:red;" >@error('password2') {{ $message }} @enderror</small>
-                <br>
-                <input type="submit" name="submit" value="Buat akun" class="form-control btn btn-success">
-            </form>
+
+    <div class="container-fluid-xl">
+
+        <div class="sidebar">
+            <div class="profil p-4 mb-3" style="border-bottom:1px solid white;">
+                <center>
+                    <img src="/storage/default/faris.jpg" alt="" class="rounded-circle" width="60%">
+                    <br>
+                    <div class="dataprofi pt-4" style="color:white;">
+                        <h5>Nama</h5>
+                        <h6>status</h6>
+                    </div>
+                </center>
+            </div>
+            <ul>
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="#">Pengaturan Profil</a></li>
+                <li><a href="#" class="collapsed" data-toggle="collapse" data-target="#daftarBuku" aria-expanded="false">Daftar Buku Saya <i class="fas fa-caret-down pl-2" style="color:white;"></i></a></li>
+                <li id="daftarBuku" class="collapse">
+                    {{-- <ul>
+                    @foreach($repository as $repo)
+                        <li> <a href="/dashboard/pembukuan/{{ $repo->id_repo }}">{{ $repo->nama_repo }}</a> </li>
+                    @endforeach
+                    </ul> --}}
+                </li>
+                <li>
+                    <form action="/logout" method="POST">
+                        @csrf
+                        <button><i class='fas fa-sign-out-alt'></i> Logout</button>
+                    </form>
+                </li>
+            </ul>
             <br>
-            <center>Sudah punya akun? klik <a href="/login">Login</a> untuk login</center>
+            <br>
+            <br>
+            <br>
+        </div>
+
+
+        <div class="container-fluid-xl" id="isi">
+            <div class="container pt-3 pb-5">
+                @yield('bodyadmin')
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
         </div>
     </div>
+    <div class="mode">
+        <button class="rounded-circle btn btn-dark" id="btnmode"><i class="fas fa-moon fa-2x" style="color:yellow;"></i></button>
+    </div>
+    <!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+<script src="/js/body.js"></script>
+<script src="{{ $js }}"></script>
+<script> CKEDITOR.replace( '{{ $ckeditor }}' ); </script>
 
-    @include('parts/cdnjs')
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+
 </body>
-
 </html>

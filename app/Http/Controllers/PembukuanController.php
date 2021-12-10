@@ -12,39 +12,48 @@ class PembukuanController extends Controller
 
     public function index($idRepo)
     {
-        $id = Auth::user()->id;
+        $auth = Auth::user();
+        session()->put('idRepo', $idRepo);//membuat session untuk idRepo
         // $idRepo = repo::select('id_repo')->where('id', $id);//select untuk memilih beberapa kolom
-        $datas = pembukuan::all()->where('id_repo',$idRepo);
-        $repo = repo::all()->where('id_repo', $idRepo);
+        //$pecah = mysqli_fetch_array(tampilPembukuan($auth->id,$idRepo));
+        //$datas = $pecah;
+        //$datas = pembukuan::select('SELECT * FROM pembukuans, repo WHERE pembukuans.id_repo = repo.id_repo AND repo.id = '.$auth->id.' AND id_repo = '.$idRepo);
+        //$datas = pembukuan::join('repo','repo.id_repo','=','pembukuans.id_repo')->all()->where('repo.id',$auth->id)->where('id_repo',$idRepo);//data tabel dengan multiple where. jika ingin menggunakan or maka gunakan orWhere(); jika ingin menggunakan sql like di dalam where maka gunakan where('id', 'LIKE' , '%'.$id.'%');
+        $datas = pembukuan::all()->where('id_repo', $idRepo);
+        //@dd($datas);
+        $repo = repo::all()->where('id_repo', $idRepo);//
+        $repository = repo::all()->where('id', $auth->id);
         return view('pembukuan', [
             'css2' => '',
             'datas' => $datas,
             'idRepo' => $idRepo,
             'css' => '/css/body.css',
             'title' => 'Pembukuan',
-            'js' => 'js/body.js',
+            'js' => '',
             'ckeditor' => '',
-            'repo' => $repo
+            'repo' => $repo,
+            'repository' => $repository,
+            'auth' => $auth
         ]);
     }
 
-    public function create($idRepo)
+    public function create()
     {
         $model = new pembukuan;
         return view('create', [
             'model' => $model,
-            'idRepo' => $idRepo,
+            'idRepo' => session('idRepo'),
             'title' => 'Tambah Pembukuan',
             'css' => '/css/pembukuan.css',
-            'js' => '/js/body.js'
+            'js' => ''
         ]);
     }
 
 
-    public function store(Request $request,$idRepo)
+    public function store(Request $request)
     {
-        $request['id_repo'] = $idRepo;
-        if(empty(pembukuan::all()->where('id_repo',$idRepo))){
+        $request['id_repo'] = session('idRepo');
+        if(empty(pembukuan::all()->where('id_repo',session('id_repo')))){
             $request['id_pembukuans'] = mt_rand(1000000000,9999999999);
         }
 
@@ -57,10 +66,10 @@ class PembukuanController extends Controller
             'kredit' => ''
         ]);
 
-        $validatedData['saldo'] = insertSaldo($idRepo,$request->debit,$request->kredit);
+        $validatedData['saldo'] = insertSaldo(session('idRepo'),$request->debit,$request->kredit);
         pembukuan::create($validatedData);
 
-        $redirect = 'pembukuan/'.$idRepo;
+        $redirect = '/dashboard/pembukuan/'.session('idRepo');
         return redirect($redirect);
     }
 
@@ -69,36 +78,36 @@ class PembukuanController extends Controller
         //
     }
 
-    public function edit($idRepo,$idBuku)
+    public function edit($idBuku)
     {
         $edit = pembukuan::find($idBuku);
         return view('updatepembukuan',[
             'data' => $edit,
-            'js' => '/js/body.js',
-            'idRepo' => $idRepo
+            'js' => '',
+            'idRepo' => session('idRepo')
         ]);
     }
 
 
-    public function update(Request $request, $idRepo, $idBuku)
+    public function update(Request $request, $idBuku)
     {
         pembukuan::where('id_pembukuans', $idBuku) -> update([
         'tanggal' => $request->tanggal,
         'uraian' => $request->uraian,
         'debit' => $request->debit,
         'kredit' => $request->kredit,
-        'saldo' => updateSaldo($idRepo, $request->debit, $request->kredit, $idBuku)
+        'saldo' => updateSaldo(session('idRepo'), $request->debit, $request->kredit, $idBuku)
         ]);
 
-        $redirect = "/pembukuan/".$idRepo;
+        $redirect = "/dashboard/pembukuan/".session('idRepo');
         return redirect($redirect);
     }
 
 
-    public function destroy($idRepo,$idBuku)
+    public function destroy($idBuku)
     {
         pembukuan::destroy($idBuku);
-        $redirect = 'pembukuan/'.$idRepo;
+        $redirect = '/dashboard/pembukuan/'.session('idRepo');
         return redirect($redirect);
     }
 }

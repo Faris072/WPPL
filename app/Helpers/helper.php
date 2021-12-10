@@ -80,7 +80,11 @@ function insertSaldo($idRepo,$requestDebit,$requestKredit){
     return $max + $requestDebit - $requestKredit;
 }
 
-
+function tampilPembukuan($id,$idRepo){
+    $sql = "SELECT * FROM pembukuans, repo WHERE pembukuans.id_repo = repo.id_repo AND repo.id = ".$id." AND pembukuans.id_repo = ".$idRepo;
+    $query = mysqli_query(koneksi(),$sql);
+    return $query;
+}
 
 
 // function updateRefresh(){

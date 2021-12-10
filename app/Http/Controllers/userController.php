@@ -44,17 +44,25 @@ class userController extends Controller
 
         $request['admin'] = false;
         $request['id'] = mt_rand(10000,99999);
-
+        $request['foto'] = "default.jpg";
         $validatedData = $request->validate([
             'id' => 'required|max:10',
             'email' => 'required|email:dns|max:255|min:12',
             'username' => 'required|max:255|min:5',
+            'foto' => '',
             'phone' => '',
             'password' => 'required_with:password2|same:password2|min:8|max:255',
             'admin' => 'required'
         ]);
-
         $validatedData['password'] = bcrypt($validatedData['password']);
+
+        $cari = User::all()->where('email', $validatedData['email']);
+
+        foreach($cari as $email){
+            if($email->email == $validatedData['email']){
+                return back()->with('pesan', 'Harap isikan email lagi');
+            }
+        }
 
         User::create($validatedData);
 

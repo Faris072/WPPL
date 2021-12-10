@@ -15,15 +15,20 @@ class repoController extends Controller
      */
     public function index()
     {
-        $id = Auth::user()->id;//mendapatkan id dari user yang login
-        $repository = repo::all()->where('id', $id);//mendapatkan semua kolom berdasarkan id = id dari user yg login
+        if(Auth::user()->admin == true){
+            return redirect('/admin');
+        }
+        $auth = Auth::user();//mendapatkan id dari user yang login
+        $repository = repo::all()->where('id', $auth->id);//mendapatkan semua kolom berdasarkan id = id dari user yg login
+        session()->put('repository', $repository);
         return view('dashboard', [
             'title' => 'dashboard',
             'css' => 'css/body.css',
             'css2' => '',
-            'js' => 'js/body.js',
+            'js' => 'js/dashboard.js',
             'ckeditor' => 'test',
-            'repository' => $repository
+            'repository' => $repository,
+            'auth' => $auth
         ]);
     }
 
@@ -34,11 +39,15 @@ class repoController extends Controller
      */
     public function create()
     {
+        $auth = Auth::user();//mendapatkan id dari user yang login
+        $repository = repo::all()->where('id', $auth->id);//mendapatkan semua kolom berdasarkan id = id dari user yg login
         return view('createrepo', [
             'title' => 'Add a new repository',
             'css2' => '',
-            'js2' => '',
-            'ckeditor' => 'descrepo'
+            'js' => '',
+            'ckeditor' => 'descrepo',
+            'repository' => $repository,
+            'auth' => $auth
         ]);
     }
 

@@ -9,5 +9,6 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 </script>
 <script src="/js/body.js"></script>
+<script src="{{ $js }}"></script>
 <script> CKEDITOR.replace( '{{ $ckeditor }}' ); </script>
 

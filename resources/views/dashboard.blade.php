@@ -5,17 +5,23 @@
     <div class="container">
         <br>
         <a href="/dashboard/create" class="btn btn-success">Repsitory Baru</a>
+        <?php $i = 0 ?>
         @foreach ($repository as $repo)
             <div class="card">
-                <h5 class="card-header">{{ $repo->nama_repo }}</h5>
+                <div class="card-header">
+                    <h5 clas> {{ $repo->nama_repo }} <span style="text-align:right;"> <a href="#">Edit</a> <a href="#">Hapus</a></span></h5>
+                </div>
                 <div class="card-body">
-                    <p class="card-text" id="deskripsi">{{ $repo->deskripsi }}</p>
+                    <p class="card-text Hdeskripsi<?php echo $i ?>" style="display:none;">{{ $repo->deskripsi }}</p>
+                    <p class="card-text deskripsi<?php echo $i ?>">{{ $repo->deskripsi }}</p>
                     <br>
                     <small>{{ $repo->last_used_at }}</small>
-                    <a href="/pembukuan/{{ $repo->id_repo }}" class="btn btn-primary">Buka Buku</a>
+                    <a href="/dashboard/pembukuan/{{ $repo->id_repo }}" class="btn btn-primary">Buka Buku</a>
                 </div>
             </div>
+        <?php $i++; ?>
         @endforeach
+        <span id="jumlah" style="display:none;"><?php echo $i ?></span>{{-- untuk mengkonversi ke html di js --}}
     </div>
 
 @endsection

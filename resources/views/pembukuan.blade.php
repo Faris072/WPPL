@@ -7,7 +7,7 @@
         <center><h1>{{ $judul->nama_repo }}</h1></center>
     @endforeach
     </br></br>
-    <a class="btn btn-info" href="/pembukuan/{{ $idRepo }}/create">Tambah</a>
+    <a class="btn btn-info" href="/pembukuan/create">Tambah</a>
     <table class='table table-striped' border='1' cellpadding='10' style='positon:static;'>
         <thead>
             <tr>
@@ -19,7 +19,7 @@
                 <th colspan="2">Action</th>
             </tr>
         </thead>
-        @foreach ($datas as $value)
+        @foreach($datas as $value)
             <tbody>
                 <tr>
                     <td>{{ $value->tanggal }}</td>
@@ -27,7 +27,7 @@
                     <td>{{ $value->debit }}</td>
                     <td>{{ $value->kredit }}</td>
                     <td>{{ $value->saldo }}</td>
-                    <td><a class="btn btn-warning" href="/pembukuan/{{ $idRepo }}/{{ $value->id_pembukuans }}/edit">Edit</a>
+                    <td><a class="btn btn-warning" href="/dashboard/pembukuan/{{ $value->id_pembukuans }}/edit">Edit</a>
                     </td>
                     <td>
                         <!-- Button trigger modal -->
@@ -46,11 +46,11 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        Dengan menghapus data pada id ini {{ $value->id_pembukuans }}, maka saldo setelah data ini akan disesuaikan
+                                        Dengan menghapus data ini, maka saldo setelah data ini akan disesuaikan
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <form action="/pembukuan/{{ $idRepo }}/{{ $value->id_pembukuans }}" method="POST">
+                                        <form action="/pembukuan/{{ $value->id_pembukuans }}/destroy" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <input type="submit" class="btn btn-danger" type="submit" value="Tetap Hapus">
