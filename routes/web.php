@@ -44,6 +44,6 @@ Route::get('/test', function () {
 });
 
 Route::resource('/admin', 'App\Http\Controllers\adminController')->middleware('auth');
-
+Route::resource('/profil', 'App\Http\Controllers\settingController');
 
 
