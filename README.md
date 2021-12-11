@@ -42,6 +42,7 @@ Kelompok 6:
 - langkah untuk commit saat setelah cloning adalah dengan menambahkan dulu semua yang ada di project anda ke repo lokal anda dengan perintah `git add .` lalu setelah itu di commit dengan perintah `git commit -m "{pesan commit anda}"` 
 - langkah untuk commit selain setelah clonning (dengan kata lain memperbarui repo lokal anda) adalah dengan mengetikan perintah `git commit -am "{pesan commit anda}"`.
 - untuk meningkatkan ukuran buffer ketik `$ git config http.postBuffer {ukuran buffer dalam bentuk byte}`. contoh `$ git config http.postBuffer 524288000` (meningkatkan ukuran buffer ke 500mb)
+- Menghapus branch di git local dengan perintah `git branch -d {nama_branch}`
 
 
 #error di git
