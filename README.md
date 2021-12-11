@@ -50,7 +50,7 @@ Kelompok 6:
 - `error: src refspec faris does not match any` saat push. cara mengatasi: nama branch lokal anda harus sama dengan branch yang akan anda push.
 - saat pull terdapat `Already up to date.` tapi di lokal anda tidak ada yang berubah. itu berarti di lokal anda lebih update daripada di github dan di github tidak ada perubahan apapun. jika anda tetap ingin pull ke github anda harus ada perubahan dan di commit dulu di githubnya setelah itu anda bisa pull lagi.
 - `error: failed to push some refs to 'https://github.com/Faris072/percobaan-github'` saat push. itu tandanya anda harus pull dulu dari github supaya lokal anda pudate atau sinkron dengan github setelah itu anda bisa coba push lagi beserta perubahan anda.
-- laravel tidak bisa jalan setelah menggunakan git. cara mengatasinya adalah di comand prompt ketik `composer install`.
+- laravel tidak bisa jalan setelah menggunakan git. cara mengatasinya adalah di comand prompt ketik `composer install`. lalu ketikkan lagi composer dumpautoload`
 
 #error di laravel
 - jika ada error gambar tidak muncul dan saat di symbolic link menggunakan perintah `php artisan storage:link` masih tidak muncul, maka hapus directory symbolic linknya yang berada di dalam folder public, lalu cari directory storage dan hapus folder tersebut.
