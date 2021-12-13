@@ -10,6 +10,9 @@
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" class="form-control" value="{{ $dataProfil->username }}">
         <br>
+        <label for="phone">Phone Number:</label>
+        <input type="text" id="phone" name="phone" class="form-control" value="{{ $dataProfil->phone }}">
+        <br>
         <label for="password">Password:</label>
         <input type="password" name="password" class="form-control" value="">
         <br>
