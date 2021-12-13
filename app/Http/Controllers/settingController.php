@@ -89,6 +89,7 @@ class settingController extends Controller
         $validatedData = $request->validate([
             'username' => 'min:4|max:50|required',
             'foto' => 'required|image|mimes:jpg,png,jpeg,svg|max:2048',
+            'phone' => 'required',
             'password' => 'required|min:8'
         ]);
         $validatedData['foto'] = $namaFoto;

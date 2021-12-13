@@ -1,7 +1,7 @@
 <div class="sidebar">
     <div class="profil p-4 mb-3" style="border-bottom:1px solid white;">
         <center>
-            <img src="/storage/foto/{{ Auth::user()->foto }}" alt="" class="rounded-circle" width="60%">
+            <img src="/storage/foto/{{ Auth::user()->foto }}" alt="" class="rounded-circle" height="100vw" width="100vw">
             <br>
             <div class="dataprofi pt-4" style="color:white;">
                 <h5>{{ Auth::user()->username }}</h5>
