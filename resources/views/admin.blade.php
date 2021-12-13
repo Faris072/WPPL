@@ -272,26 +272,89 @@
                             </tr>
                         </thead>
                         <tbody>
+                        @foreach ($data as $x)
                             <tr>
-                                <td>1</td>
-                                <td>Rifai angga</td>
-                                <td>anggarifai@mail.com</td>
-                                <td>(171) 555-2222</td>
+                                <td>{{ $x->id }}</td>
+                                <td>{{ $x->username }}</td>
+                                <td>{{ $x->email }}</td>
+                                <td>{{ $x->phone }}</td>
                                 <td>
-                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                                    <a href="#editEmployeeModal{{ $x->id }}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                                    <a href="#deleteEmployeeModal{{ $x->id }}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Dominique Perrier</td>
-                                <td>dominiqueperrier@mail.com</td>
-                                <td>(313) 555-5735</td>
-                                <td>
-                                    <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                                    <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                                </td>
-                            </tr>
+                            <!-- Edit Modal HTML -->
+                            <div id="editEmployeeModal{{ $x->id }}" class="modal fade">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <form action="/admin/{{ $x->id }}" method="POST">
+                                            @csrf
+                                            @method('PUT')
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Edit User</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="form-group">
+                                                    <label>ID</label>
+                                                    <input type="text" class="form-control" name="id" value="{{ $x->id }}" disabled required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Name</label>
+                                                    <input type="text" class="form-control" name="username" value="{{ $x->username }}" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Email</label>
+                                                    <input type="email" class="form-control" name="email" value="{{ $x->email }}" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Phone</label>
+                                                    <input type="text" class="form-control" name="phone" value="{{ $x->phone }}" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <p>Be Admin:</p>
+                                                    <label class="container">
+                                                        <input type="radio" @if( $x->admin == true ) checked="checked" @endif name="admin" value="1">
+                                                        <span class="checkmark"></span>Yes
+                                                    </label>
+                                                    <label class="container">
+                                                        <input type="radio" @if( $x->admin == false ) checked="checked" @endif name="admin" value="0">
+                                                        <span class="checkmark"></span>No
+                                                    </label>
+                                                    <br>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                                <input type="submit" class="btn btn-info" value="Save">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Delete Modal HTML -->
+                            <div id="deleteEmployeeModal{{ $x->id }}" class="modal fade">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <form>
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Delete User</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Apakah anda akan siap menghapusnya?</p>
+                                                <p class="text-danger"><small>Tindakan ini tidak bisa dibatalkan.</small></p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                                <input type="submit" class="btn btn-danger" value="Delete">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- endDeleteModal --}}
+                        @endforeach
                         </tbody>
                     </table>
                     <div class="clearfix">
@@ -304,71 +367,6 @@
                             <li class="page-item"><a href="#" class="page-link">Next</a></li>
                         </ul>
                     </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Edit Modal HTML -->
-        <div id="editEmployeeModal" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <form>
-                        <div class="modal-header">
-                            <h4 class="modal-title">Edit User</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label>Name</label>
-                                <input type="text" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Phone</label>
-                                <input type="text" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <p>Be Admin:</p>
-                                <label class="container">
-                                    <input type="radio" checked="checked" name="radio">
-                                    <span class="checkmark"></span>Yes
-                                </label>
-                                <label class="container">
-                                    <input type="radio" checked="checked" name="radio">
-                                    <span class="checkmark"></span>No
-                                </label>
-                                <br>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                            <input type="submit" class="btn btn-info" value="Save">
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        <!-- Delete Modal HTML -->
-        <div id="deleteEmployeeModal" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <form>
-                        <div class="modal-header">
-                            <h4 class="modal-title">Delete User</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Apakah anda akan siap menghapusnya?</p>
-                            <p class="text-danger"><small>Tindakan ini tidak bisa dibatalkan.</small></p>
-                        </div>
-                        <div class="modal-footer">
-                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                            <input type="submit" class="btn btn-danger" value="Delete">
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>
