@@ -19,12 +19,13 @@ Kelompok 6:
 -Front end development:
 
 -back end development:
-
+.
 
 
 ##Cara menggunakan github
 - pastikan anda sudah menjadi colaborate dengan klik link yang sudah di bagikan di grub whatsapp atau anda bisa fork ke akun anda (lebih disarankan menjadi colaborate)
 - jika sudah melakukan cara di atas maka selanjutnya anda cloning project di github ke komputer anda dengan mengetikkan perintah `git clone {url github}`
+- INGAT! setelah clone, ketik di terminal `composer install` supaya artisan bisa berjalan dan migrate database. nama database `project-akhir-wawbw`. 
 - cek apakah sudah di init atau belum. cara mengetahui sudah di initialisasi atau belum adalah jika sudah di inisialisasi akan ada `(nama branch)` setelah path folder project anda di terminal git bash.
 - jika belum ada maka anda harus initials dulu folder tersebut dengan perintah `git init`.
 - untuk menghapus semua git repo dan membatalkan init maka ketikkan `rm -rf .git`.
@@ -40,7 +41,7 @@ Kelompok 6:
 - jangan lupa setelah cloning, sebelum push, dan sesudah pull di commit di branch lokal anda.
 - langkah untuk commit saat setelah cloning adalah dengan menambahkan dulu semua yang ada di project anda ke repo lokal anda dengan perintah `git add .` lalu setelah itu di commit dengan perintah `git commit -m "{pesan commit anda}"` 
 - langkah untuk commit selain setelah clonning (dengan kata lain memperbarui repo lokal anda) adalah dengan mengetikan perintah `git commit -am "{pesan commit anda}"`.
-
+- untuk meningkatkan ukuran buffer ketik `$ git config http.postBuffer {ukuran buffer dalam bentuk byte}`. contoh `$ git config http.postBuffer 524288000` (meningkatkan ukuran buffer ke 500mb)
 
 
 #error di git
