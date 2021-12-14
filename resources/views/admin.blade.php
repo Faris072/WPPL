@@ -267,7 +267,7 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Phone</th>
-                                <th colspan="3">Actions</th>
+                                <th colspan="3" style="text-align:center">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -277,7 +277,7 @@
                                 <td>{{ $x->username }}</td>
                                 <td>{{ $x->email }}</td>
                                 <td>{{ $x->phone }}</td>
-                                <td><a href="#infoEmployeeModal" class="btn btn-primary" data-toggle="modal">Info</a></td>
+                                <td><a href="#infoEmployeeModal{{ $x->id }}" class="btn btn-warning" data-toggle="modal">Info</a></td>
                                 <td><a href="#editEmployeeModal{{ $x->id }}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a></td>
                                 <td><a href="#deleteEmployeeModal{{ $x->id }}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a></td>
                             </tr>
@@ -354,6 +354,56 @@
                                 </div>
                             </div>
                             {{-- endDeleteModal --}}
+                            <!-- Info Modal HTML -->
+                            <div id="infoEmployeeModal{{ $x->id }}" class="modal fade">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <form>
+                                            <div class="modal-header">
+                                                <h4 class="modal-title">Detail</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div>
+                                                    <b>Photo Profile:</b>
+                                                    <br>
+                                                    <center><img src="/storage/foto/{{ $x->foto }}" alt="" class="rounded-circle" height="100vw" width="100vw"></center>
+                                                    <br>
+                                                </div>
+                                                <div>
+                                                    <b>ID:</b>
+                                                    <p>{{ $x->id }}</p>
+                                                </div>
+                                                <div>
+                                                    <b>Name:</b>
+                                                    <p>{{ $x->username }}</p>
+                                                </div>
+                                                <div>
+                                                    <b>Email:</b>
+                                                    <p>{{ $x->email }}</p>
+                                                </div>
+                                                <div>
+                                                    <b>Phone:</b>
+                                                    <p>{{ $x->phone }}</p>
+                                                </div>
+                                                <div>
+                                                    @if($x->admin == true)
+                                                    <b>Account Level</b>
+                                                    <p>Admin</p>
+                                                    @else
+                                                    <b>Account Level</b>
+                                                    <p>User</p>
+                                                    @endif
+                                                </div>
+                    
+                                            </div>
+                                            <div class="modal-footer">
+                                                <input type="button" class="btn btn-default" data-dismiss="modal" value="Close">
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         @endforeach
                         </tbody>
                     </table>
@@ -367,43 +417,6 @@
                             <li class="page-item"><a href="#" class="page-link">Next</a></li>
                         </ul>
                     </div>
-                </div>
-            </div>
-        </div>
-        <!-- Info Modal HTML -->
-        <div id="infoEmployeeModal" class="modal fade">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <form>
-                        <div class="modal-header">
-                            <h4 class="modal-title">Detail</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        </div>
-                        <div class="modal-body">
-                            <div>
-                                <label>Photo Profile:</label>
-                                <br>
-
-                                <br>
-                            </div>
-                            <div>
-                                <label>Name:</label>
-                                <p>Rifa'i Angga Pratama</p>
-                            </div>
-                            <div>
-                                <label>Email:</label>
-                                <p>anggarifai@mail.com</p>
-                            </div>
-                            <div>
-                                <label>Phone:</label>
-                                <p>(313) 555-5735</p>
-                            </div>
-
-                        </div>
-                        <div class="modal-footer">
-                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Close">
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>
