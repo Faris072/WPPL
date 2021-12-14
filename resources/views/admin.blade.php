@@ -334,7 +334,6 @@
                             <div id="deleteEmployeeModal{{ $x->id }}" class="modal fade">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
-                                        <form>
                                             <div class="modal-header">
                                                 <h4 class="modal-title">Delete User</h4>
                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -351,7 +350,6 @@
                                                     <input type="submit" class="btn btn-danger" value="Delete">
                                                 </form>
                                             </div>
-                                        </form>
                                     </div>
                                 </div>
                             </div>

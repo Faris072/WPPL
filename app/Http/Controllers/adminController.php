@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\admin;
 use Illuminate\Http\Request;
 use App\Models\user;
+use App\Models\repo;
+use App\Models\pembukuan;
 
 class adminController extends Controller
 {
@@ -97,6 +99,18 @@ class adminController extends Controller
      */
     public function destroy($id)
     {
+        $repo = repo::all()->where('id',$id);
+        $i=0;
+        foreach($repo as $y){
+            $x[$i]=$y->id_repo;
+            $i++;
+        }
+        $j=0;
+        while($repo){
+            pembukuan::destroy('id_repo', $x[$j]);
+            $j++;
+        }
+        repo::destroy($id);
         user::destroy($id);
         return redirect('/admin');
     }
