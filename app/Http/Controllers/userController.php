@@ -14,7 +14,7 @@ class userController extends Controller
      */
     public function index()
     {
-        return view('register', [
+        return view('daftar', [
             'title' => 'Register Page',
             'css' => '',
             'css2' => '',
@@ -41,7 +41,6 @@ class userController extends Controller
     */
     public function store(Request $request)
     {
-
         $request['admin'] = false;
         $request['id'] = mt_rand(10000,99999);
         $request['foto'] = "default.jpg";
@@ -66,7 +65,7 @@ class userController extends Controller
 
         User::create($validatedData);
 
-        return redirect('/login');
+        return redirect('/');
     }
 
     /**

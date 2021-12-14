@@ -16,9 +16,8 @@ use App\Http\Controllers\loginController;
 */
 
 Route::get('/', function () {
-    return view('welcome' , [
+    return view('welkam' , [
         'title' => 'Homepage | Selamat datang!',
-        'css' => 'css/homepage.css'
     ]);
 })->middleware('guest');
 
