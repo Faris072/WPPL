@@ -268,6 +268,7 @@
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Phone</th>
+                                <th>Detail</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -277,6 +278,7 @@
                                 <td>Rifai angga</td>
                                 <td>anggarifai@mail.com</td>
                                 <td>(171) 555-2222</td>
+                                <td><button type="button" class="btn btn-info" href="#infoEmployeeModal" data-toggle="modal">Info</button></td>
                                 <td>
                                     <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                                     <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
@@ -287,6 +289,7 @@
                                 <td>Dominique Perrier</td>
                                 <td>dominiqueperrier@mail.com</td>
                                 <td>(313) 555-5735</td>
+                                <td><button type="button" class="btn btn-info" href="#infoEmployeeModal" data-toggle="modal">Info</button></td>
                                 <td>
                                     <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                                     <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
@@ -304,6 +307,44 @@
                             <li class="page-item"><a href="#" class="page-link">Next</a></li>
                         </ul>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Modal HTML -->
+        <div id="infoEmployeeModal" class="modal fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">
+                            <h4 class="modal-title">Detail</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <label>Photo Profile:</label>
+                                <br>
+
+                                <br>
+                            </div>
+                            <div>
+                                <label>Name:</label>
+                                <p>Rifa'i Angga Pratama</p>
+                            </div>
+                            <div>
+                                <label>Email:</label>
+                                <p>anggarifai@mail.com</p>
+                            </div>
+                            <div>
+                                <label>Phone:</label>
+                                <p>(313) 555-5735</p>
+                            </div>
+
+                        </div>
+                        <div class="modal-footer">
+                            <input type="button" class="btn btn-default" data-dismiss="modal" value="Close">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
