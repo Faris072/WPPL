@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\admin;
 use Illuminate\Http\Request;
+use App\Models\user;
 
 class adminController extends Controller
 {
@@ -14,10 +15,12 @@ class adminController extends Controller
      */
     public function index()
     {
+        $data = user::all();
         return view('/admin',[
             'title' => 'Dashboard Admin',
             'css' => '',
             'js' => '',
+            'data' => $data,
             'ckeditor' => ''
         ]);
     }
@@ -72,9 +75,18 @@ class adminController extends Controller
      * @param  \App\Models\admin  $admin
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, admin $admin)
+    public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'username' => 'required|min:5|max:255',
+            'email' => 'required|email:dns',
+            'phone' => 'required',
+            'admin' => 'required'
+        ]);
+
+        user::where('id', $id)->update($validatedData);
+
+        return redirect('/admin');
     }
 
     /**
