@@ -360,7 +360,12 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                                                <input type="submit" class="btn btn-danger" value="Delete">
+                                                <form action="/admin/{{ $x->id }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <input type="submit" class="btn btn-danger" value="Delete">
+                                                </form>
+
                                             </div>
                                         </form>
                                     </div>
