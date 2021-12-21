@@ -16,7 +16,7 @@ class CreatePembukuansTable extends Migration
         Schema::create('pembukuans', function (Blueprint $table) {
             $table->bigIncrements('id_pembukuans');
             $table->unsignedBigInteger('id_repo');
-            $table->foreign('id_repo')->references('id_repo')->on('repo');
+            $table->foreign('id_repo')->references('id_repo')->on('repo')->onDelete('cascade');
             $table->date('tanggal');
             $table->string('uraian');
             $table->bigInteger('debit')->nullable();

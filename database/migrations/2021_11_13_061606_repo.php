@@ -16,7 +16,7 @@ class Repo extends Migration
         Schema::create('repo', function (Blueprint $table) {
             $table->id('id_repo');
             $table->unsignedBigInteger('id');//membuat kolom id yang siap dijadikan foreign key
-            $table->foreign('id')->references('id')->on('user');//menjadikan id sebagai foreign key
+            $table->foreign('id')->references('id')->on('user')->onDelete('cascade');//menjadikan id sebagai foreign key
             $table->string('nama_repo',50);
             $table->string('deskripsi',2000)->nullable();
             $table->timestamp('last_used_at')->nullable();
