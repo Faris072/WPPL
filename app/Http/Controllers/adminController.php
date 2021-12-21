@@ -50,7 +50,31 @@ class adminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request['id'] = mt_rand(10000,99999);
+        $request['foto'] = 'default.jpg';
+        $validatedData = $request->validate([
+            'id' => 'required',
+            'username' => 'required|min:5',
+            'email' => 'required|email:dns|max:30',
+            'foto' => 'required',
+            'phone' => 'required',
+            'password' => 'required_with:password2|same:password2|min:8|max:255',
+            'admin' => 'required'
+        ]);
+
+        $validatedData['password'] = bcrypt($validatedData['password']);
+
+        $cari = User::all()->where('email', $validatedData['email']);
+
+        foreach($cari as $email){
+            if($email->email == $validatedData['email']){
+                return back()->with('pesan', 'Harap isikan email lagi');
+            }
+        };
+
+        user::create($validatedData);
+
+        return redirect('/admin');
     }
 
     /**

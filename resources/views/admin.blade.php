@@ -245,10 +245,7 @@
         <body>
         <br>
         <h1> Admin Page </h1>
-        <form action="/admin/create" method="POST">
-            @csrf
-            <input type="submit"class="btn btn-success" value="Add User">
-        </form>
+        <a href="/admin/create" class="btn btn-success">Add User</a>
         <div class="container-xl">
             <div class="table-responsive">
                 <div class="table-wrapper">
