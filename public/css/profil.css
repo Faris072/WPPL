@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,900|Montserrat|Roboto");
+
+h1 {
+    font-family: "Montserrat", sans-serif;
+    color: #7ed386;
+    font-size: 1.5rem;
+}
+.img {
+    float:left;
+    padding: 0px;
+    position: relative;
+    border-color: black;
+}
+
+
+.posisi {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+    left: 0px;
+    right: 0px;
+    top: 100px;
+    bottom: 0px;
+    border-color: black;
+}
+
+.container {
+    width: 960px;
+    margin-bottom: 80px;
+
+    position: relative;
+}
+
+.td{
+    font-family: "Montserrat", sans-serif;
+    color: #cd5c5c;
+}
+.td a{
+    right: auto;
+}
+
+body{
+    font: 16px/28px Montserrat, sans-serif;
+    color: #333;
+    background-attachment: fixed;
+    list-style: 1;
+}
+
+.button{
+    border: none;
+    color: blue;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    transition-duration: 0.45;
+    cursor: pointer;
+}
+
+.button1 {
+    background-color: #7ed386;
+    color: white;
+}
+
+.button1:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid red;
+}
