@@ -1,11 +1,6 @@
 @extends('parts/bodyadmin')
 
 @section('bodyadmin')
-    <form action="/logout" method="POST">
-        @csrf
-        <input type="submit"class="btn btn-success" value="Logout">
-    </form>
-
     <html lang="en">
         <head>
         <meta charset="utf-8">
@@ -250,6 +245,10 @@
         <body>
         <br>
         <h1> Admin Page </h1>
+        <form action="/admin/create" method="POST">
+            @csrf
+            <input type="submit"class="btn btn-success" value="Add User">
+        </form>
         <div class="container-xl">
             <div class="table-responsive">
                 <div class="table-wrapper">
@@ -395,7 +394,7 @@
                                                     <p>User</p>
                                                     @endif
                                                 </div>
-                    
+
                                             </div>
                                             <div class="modal-footer">
                                                 <input type="button" class="btn btn-default" data-dismiss="modal" value="Close">

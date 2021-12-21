@@ -34,7 +34,12 @@ class adminController extends Controller
      */
     public function create()
     {
-        //
+        return view('adduser',[
+            'title' => 'Add User',
+            'css' => '',
+            'js' => '',
+            'ckeditor' => ''
+        ]);
     }
 
     /**
