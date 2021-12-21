@@ -90,9 +90,16 @@ class repoController extends Controller
      * @param  \App\Models\repo  $repo
      * @return \Illuminate\Http\Response
      */
-    public function edit(repo $repo)
+    public function edit($id)
     {
-        //
+        $data=Repo::find($id);
+        return view('editrepo', [
+            'title' => 'Edit repository',
+            'css2' => '',
+            'js' => '',
+            'ckeditor' => 'descrepo',
+            'data' => $data
+        ]);
     }
 
     /**
@@ -102,9 +109,13 @@ class repoController extends Controller
      * @param  \App\Models\repo  $repo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, repo $repo)
+    public function update(Request $request, $id)
     {
-        //
+        Repo::where('id', $id)->update([
+            'nama_repo' => $request->nama_repo,
+            'deskripsi' => $request->deskripsi
+        ]);
+        return redirect('/dashboard');
     }
 
     /**

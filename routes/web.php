@@ -19,10 +19,10 @@ Route::get('/', function () {
     return view('welkam' , [
         'title' => 'Homepage | Selamat datang!',
     ]);
-})->middleware('guest');
+})->name('login')->middleware('guest');
 
 Route::resource('/register', 'App\Http\Controllers\userController')->middleware('guest');
-Route::get('/login', 'App\Http\Controllers\loginController@index')->name('login')->middleware('guest');
+Route::get('/login', 'App\Http\Controllers\loginController@index')->middleware('guest');
 Route::post('/login/authenticate','App\Http\Controllers\loginController@authenticate')->middleware('guest');
 //ketika user yang belum login masuk ke halaman yang harus login dulu maka akan diredirect di route yang telah disediakan
 //di App/Http/Middleware/Authenticate.php

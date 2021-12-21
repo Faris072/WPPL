@@ -9,7 +9,7 @@
         @foreach ($repository as $repo)
             <div class="card">
                 <div class="card-header">
-                    <h5 clas> {{ $repo->nama_repo }} <span style="text-align:right;"> <a href="#">Edit</a> <a href="#">Hapus</a></span></h5>
+                    <h5 clas> {{ $repo->nama_repo }} <span style="text-align:right;"> <a href="/dashboard/{{ $repo->id_repo }}/edit">Edit</a> <a href="#">Hapus</a></span></h5>
                 </div>
                 <div class="card-body">
                     <p class="card-text Hdeskripsi<?php echo $i ?>" style="display:none;">{{ $repo->deskripsi }}</p>
