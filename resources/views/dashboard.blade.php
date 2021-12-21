@@ -16,11 +16,11 @@
                     <p class="card-text deskripsi<?php echo $i ?>">{{ $repo->deskripsi }}</p>
                     <br>
                     <small>{{ $repo->last_used_at }}</small>
-                    <a href="/dashboard/pembukuan/{{ $repo->id_repo }}" class="btn btn-primary">Buka Buku</a>
+                    <a href="/dashboard/pembukuan/{{ $repo->id_repo }}" class="btn btn-primary mb-3">Buka Buku</a>
                     <form action="/dashboard/{{ $repo->id_repo }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <input type="submit" class="btn btn-danger" type="submit" value="Hapus Repo">
+                        <input type="submit" class="btn btn-danger" type="submit" value="Hapus Buku">
                     </form>
                 </div>
             </div>
