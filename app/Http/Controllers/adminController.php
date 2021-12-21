@@ -128,18 +128,6 @@ class adminController extends Controller
      */
     public function destroy($id)
     {
-        $repo = repo::all()->where('id',$id);
-        $i=0;
-        foreach($repo as $y){
-            $x[$i]=$y->id_repo;
-            $i++;
-        }
-        $j=0;
-        while($repo){
-            pembukuan::destroy('id_repo', $x[$j]);
-            $j++;
-        }
-        repo::destroy($id);
         user::destroy($id);
         return redirect('/admin');
     }

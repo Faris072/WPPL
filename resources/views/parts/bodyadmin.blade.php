@@ -55,16 +55,17 @@
                     <a class="nav-link" href="#">Link</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#navbarDropdown" role="button" data-toggle="collapse" aria-expanded="false">
                         Dropdown
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-biasa collapse" id="navbarDropdown" style="position:absolute; z-index: 99999; background-color:white; border-radius:5px;">
+                    <div class="dropdown-kotak">
                         <a class="dropdown-item" href="#">Action</a>
                         <a class="dropdown-item" href="#">Another action</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Something else here</a>
                     </div>
+                </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#">Disabled</a>
@@ -111,8 +112,8 @@
             <ul>
                 <li><a href="/dashboard">Dashboard</a></li>
                 <li><a href="#">Pengaturan Profil</a></li>
-                <li><a href="#" class="collapsed" data-toggle="collapse" data-target="#daftarBuku" aria-expanded="false">Daftar Buku Saya <i class="fas fa-caret-down pl-2" style="color:white;"></i></a></li>
-                <li id="daftarBuku" class="collapse">
+                {{-- <li><a href="#" class="collapsed" data-toggle="collapse" data-target="#daftarBuku" aria-expanded="false">Daftar Buku Saya <i class="fas fa-caret-down pl-2" style="color:white;"></i></a></li> --}}
+                {{-- <li id="daftarBuku" class="collapse"> --}}
                     {{-- <ul>
                     @foreach($repository as $repo)
                         <li> <a href="/dashboard/pembukuan/{{ $repo->id_repo }}">{{ $repo->nama_repo }}</a> </li>

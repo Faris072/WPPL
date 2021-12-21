@@ -3,15 +3,15 @@
 @section('bodyadmin')
     <html lang="en">
         <head>
-        <meta charset="utf-8">
+        {{-- <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        {{-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script> --}}
         <style>
         body {
             color: #566787;
@@ -274,8 +274,8 @@
                                 <td>{{ $x->email }}</td>
                                 <td>{{ $x->phone }}</td>
                                 <td><a href="#infoEmployeeModal{{ $x->id }}" class="btn btn-warning" data-toggle="modal">Info</a></td>
-                                <td><a href="#editEmployeeModal{{ $x->id }}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a></td>
-                                <td><a href="#deleteEmployeeModal{{ $x->id }}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a></td>
+                                <td><a href="#editEmployeeModal{{ $x->id }}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit"><i class="fas fa-pencil-alt color-warning"></i></i></a></td>
+                                <td><a href="#deleteEmployeeModal{{ $x->id }}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete"><i class="fas fa-trash-alt color-danger"></i></i></a></td>
                             </tr>
                             <!-- Edit Modal HTML -->
                             <div id="editEmployeeModal{{ $x->id }}" class="modal fade">

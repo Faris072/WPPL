@@ -29,7 +29,7 @@ class PembukuanController extends Controller
             'idRepo' => $idRepo,
             'css' => '/css/body.css',
             'title' => 'Pembukuan',
-            'js' => '',
+            'js' => '/js/pembukuan.js',
             'ckeditor' => '',
             'repo' => $repo,
             'repository' => $repository,
