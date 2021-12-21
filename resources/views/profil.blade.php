@@ -27,10 +27,10 @@
                 <td style="padding-right:1vw;">:</td>
                 <td>{{ Auth::user()->phone }}</td>
             </tr>
-            
+
         </table>
-       
-       <button style="border-radius: 8px;margin-top: 10%;" class="button button1"> <a href="/profil/{{Auth::user()->id}}/edit">Edit Profil</a>
+
+    <a href="/profil/{{Auth::user()->id}}/edit" class="btn btn-success">Edit Profil</a>
 </button>
 
 </div>
