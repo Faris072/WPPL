@@ -17,6 +17,11 @@
                     <br>
                     <small>{{ $repo->last_used_at }}</small>
                     <a href="/dashboard/pembukuan/{{ $repo->id_repo }}" class="btn btn-primary">Buka Buku</a>
+                    <form action="/dashboard/{{ $repo->id_repo }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" class="btn btn-danger" type="submit" value="Hapus Repo">
+                    </form>
                 </div>
             </div>
         <?php $i++; ?>

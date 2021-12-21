@@ -113,8 +113,9 @@ class repoController extends Controller
      * @param  \App\Models\repo  $repo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(repo $repo)
+    public function destroy($repo)
     {
-        //
+        repo::destroy($repo);
+        return redirect('/dashboard');
     }
 }
