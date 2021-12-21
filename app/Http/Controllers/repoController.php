@@ -109,9 +109,9 @@ class repoController extends Controller
      * @param  \App\Models\repo  $repo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $id_repo)
     {
-        Repo::where('id', $id)->update([
+        Repo::where('id_repo', $id_repo)->update([
             'nama_repo' => $request->nama_repo,
             'deskripsi' => $request->deskripsi
         ]);

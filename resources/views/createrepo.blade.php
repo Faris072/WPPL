@@ -3,7 +3,7 @@
 @section('body')
     <div class="container mt-4">
         <center><h2>Add a new repository</h2></center>
-        <form action="/dashboard/{{ $data->id_repo }}" method="POST">
+        <form action="/dashboard" method="POST">
             @csrf
             <label for="namarepo">Nama Repository:</label>
             <input type="text" id="namarepo" name="nama_repo" class="form-control" placeholder="Isikan Nama Repository" required>
