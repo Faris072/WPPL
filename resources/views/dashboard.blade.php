@@ -23,7 +23,6 @@
                         @method('DELETE')
                         <input type="submit" class="btn btn-danger" type="submit" value="Hapus Buku">
                     </form>
- Buku</a>
         </div>
         <?php $i++; ?>
         @endforeach
