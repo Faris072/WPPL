@@ -14,7 +14,7 @@ Kelompok 6:
 - 04 November membahas ulang github beserta diskusi aplikasi final project
 
 
-
+##Front end
 
 
 ##Cara menggunakan github
