@@ -15,11 +15,6 @@ Kelompok 6:
 
 
 
-##Pembagian tugas project
--Front end development:
-
--back end development:
-.
 
 
 ##Cara menggunakan github
