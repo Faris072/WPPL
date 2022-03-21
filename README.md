@@ -28,14 +28,6 @@ Back end:
 - Bayu
 
 
-##Jadwal:
-- 27 Oktober 2021 - 04 November 2021 Belajar Github
-- 04 November membahas ulang github beserta diskusi aplikasi final project
-
-
-##Front end
-
-
 ##Cara menggunakan github
 - pastikan anda sudah menjadi colaborate dengan klik link yang sudah di bagikan di grub whatsapp atau anda bisa fork ke akun anda (lebih disarankan menjadi colaborate)
 - jika sudah melakukan cara di atas maka selanjutnya anda cloning project di github ke komputer anda dengan mengetikkan perintah `git clone {url github}`
