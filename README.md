@@ -14,10 +14,18 @@ Kelompok 6:
 - 
 
 Pembagian Tugas:
-- Front End:
--- Fathan
--- Farhan
-- 
+Front End:
+- Fathan
+- Farhan
+- Nabila
+- Khafid
+- Rifa'i
+
+Back end:
+- Muhammad Faris Shafwan (3120510104)
+- Bagas P
+- Bagas (Optional)
+- Bayu
 
 
 ##Jadwal:
