@@ -15,8 +15,8 @@ Kelompok 6:
 
 Pembagian Tugas:
 - Front End:
-- - Fathan
-- - Farhan
+ - Fathan
+  - Farhan
 - 
 
 
