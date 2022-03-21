@@ -24,7 +24,7 @@ Front End:
 Back end:
 - Muhammad Faris Shafwan (3120510104)
 - Bagas P
-- Bagas (Optional)
+- Bagas (3120510609)
 - Bayu
 
 
