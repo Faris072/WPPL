@@ -19,9 +19,7 @@ class CreatePembukuansTable extends Migration
             $table->foreign('id_repo')->references('id_repo')->on('repo')->onDelete('cascade');
             $table->date('tanggal');
             $table->string('uraian');
-            $table->bigInteger('debit')->nullable();
-            $table->bigInteger('kredit')->nullable();
-            $table->bigInteger('saldo')->nullable();
+            $table->bigInteger('nominal')->nullable();
             $table->timestamp('last_used_at')->nullable();
             $table->timestamps();
         });

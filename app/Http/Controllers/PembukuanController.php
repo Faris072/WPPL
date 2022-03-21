@@ -19,7 +19,7 @@ class PembukuanController extends Controller
         //$datas = $pecah;
         //$datas = pembukuan::select('SELECT * FROM pembukuans, repo WHERE pembukuans.id_repo = repo.id_repo AND repo.id = '.$auth->id.' AND id_repo = '.$idRepo);
         //$datas = pembukuan::join('repo','repo.id_repo','=','pembukuans.id_repo')->all()->where('repo.id',$auth->id)->where('id_repo',$idRepo);//data tabel dengan multiple where. jika ingin menggunakan or maka gunakan orWhere(); jika ingin menggunakan sql like di dalam where maka gunakan where('id', 'LIKE' , '%'.$id.'%');
-        $datas = pembukuan::all()->where('id_repo', $idRepo);
+        $datas = pembukuan::all()->where('id_repo', $idRepo)->sortBy('tanggal');
         //@dd($datas);
         $repo = repo::all()->where('id_repo', $idRepo);//
         $repository = repo::all()->where('id', $auth->id);
@@ -57,16 +57,32 @@ class PembukuanController extends Controller
             $request['id_pembukuans'] = mt_rand(1000000000,9999999999);
         }
 
+        $idRepo = session('idRepo');
+
+        $dataRepo = Repo::all()->where('id_repo',$idRepo)->first();
+        // @dd($dataRepo);
+
         $validatedData = $request->validate([
             'id_repo' => '',
             'id_pembukuans' => '',
             'tanggal' => 'required',
             'uraian' => 'required',
-            'debit' => '',
-            'kredit' => ''
+            'arus' => 'required',
+            'nominal' => 'required'
         ]);
 
-        $validatedData['saldo'] = insertSaldo(session('idRepo'),$request->debit,$request->kredit);
+        if($request->arus =='debit'){
+            $validatedData['nominal'] = $validatedData['nominal'];
+            $saldo = $dataRepo->saldo+$validatedData['nominal'];
+            Repo::where('id_repo',$idRepo)->update(['saldo'=>$saldo]);
+        }
+        else if($request->arus =='kredit'){
+            $validatedData['nominal'] = -$validatedData['nominal'];
+            $saldo = $dataRepo->saldo+$validatedData['nominal'];
+            // @dd($saldo);
+            Repo::where('id_repo',$idRepo)->update(['saldo'=>$saldo]);
+        };
+
         pembukuan::create($validatedData);
 
         $redirect = '/dashboard/pembukuan/'.session('idRepo');
@@ -94,8 +110,8 @@ class PembukuanController extends Controller
         pembukuan::where('id_pembukuans', $idBuku) -> update([
         'tanggal' => $request->tanggal,
         'uraian' => $request->uraian,
-        'debit' => $request->debit,
-        'kredit' => $request->kredit,
+        'arus' => $request->arus,
+        'nominal' => $request->nominal,
         'saldo' => updateSaldo(session('idRepo'), $request->debit, $request->kredit, $idBuku)
         ]);
 

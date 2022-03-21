@@ -65,8 +65,11 @@ class repoController extends Controller
             'nama_repo' => 'required|max:50',
             'deskripsi' => '',
             'id' => '',
-            'id_repo' => ''
+            'id_repo' => '',
+            'saldo' => ''
         ]);
+
+        $validatedData['saldo'] = 0;
 
         repo::create($validatedData);
 

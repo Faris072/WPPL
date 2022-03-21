@@ -14,6 +14,10 @@
             </div>
         </div>
     @endforeach
+    <br>
+    @foreach ($repo as $saldo)
+        <p>Saldo: {{ $saldo->saldo }}</p>
+    @endforeach
     </br></br>
     <a class="btn btn-info" href="/pembukuan/create">Tambah</a>
     <table class='table table-striped' border='1' cellpadding='10' style='positon:static;'>
@@ -21,9 +25,7 @@
             <tr>
                 <th>Tanggal</th>
                 <th>Uraian</th>
-                <th>Debit</th>
-                <th>Kredit</th>
-                <th>Saldo</th>
+                <th>Arus Keuangan</th>
                 <th colspan="2">Action</th>
             </tr>
         </thead>
@@ -32,10 +34,7 @@
                 <tr>
                     <td>{{ $value->tanggal }}</td>
                     <td>{{ $value->uraian }}</td>
-                    <td>{{ $value->debit }}</td>
-                    <td>{{ $value->kredit }}</td>
-                    <td>{{ $value->saldo }}</td>
-                    <td><a class="btn btn-warning" href="/dashboard/pembukuan/{{ $value->id_pembukuans }}/edit">Edit</a>
+                    <td>{{ $value->nominal }}</td>
                     </td>
                     <td>
                         <!-- Button trigger modal -->

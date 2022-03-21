@@ -13,7 +13,7 @@ class repo extends Model
 
     protected $primaryKey = 'id_repo';
 
-    protected $fillable = ['id_repo','id','nama_repo','deskripsi'];
+    protected $fillable = ['id_repo','id','nama_repo','deskripsi','saldo'];
 
     public function User(){
         return $this->belongsTo(User::class);
