@@ -8,7 +8,7 @@ Kelompok 6:
 - Rifa'i Anggara Pratama (3120510101)
 - Nabila
 - Khafid
-- Bagas
+- Bagas Maulana
 - Bayu
 - 
 
