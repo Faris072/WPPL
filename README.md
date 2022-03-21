@@ -12,7 +12,8 @@ Kelompok 6:
 - Bayu
 - 
 
-Pembagian Tugas:
+Pembagian Tugas: 
+
 Front End:
 - Fathan
 - Farhan
