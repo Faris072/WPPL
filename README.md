@@ -1,13 +1,23 @@
 
 #PJECT WORKSHOP PRODUKSI PERANGKAT LUNAK
 
-Kelompok 6:
+Kelompok 6: 
 - Bagas Prakoso (3120510109)
 - Muhammad Farhan Bilnazari (3120510103)
 - Muhammad Faris Shafwan (3120510104)
 - Fathan Willdany (3120510105)
 - Rifa'i Anggara Pratama (3120510101)
+- Nabila
+- Khafid
+- Bagas
+- Bayu
+- 
 
+Pembagian Tugas:
+- Front End:
+- - Fathan
+- - Farhan
+- 
 
 
 ##Jadwal:
