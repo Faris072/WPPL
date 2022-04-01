@@ -27,6 +27,10 @@ Back end:
 - Bagas Maulana (3120510609)
 - Bayu
 
+## ANNOUNCEMENT 
+
+Lur ndang digae halaman cetak e
+
 
 ##Cara menggunakan github
 - pastikan anda sudah menjadi colaborate dengan klik link yang sudah di bagikan di grub whatsapp atau anda bisa fork ke akun anda (lebih disarankan menjadi colaborate)

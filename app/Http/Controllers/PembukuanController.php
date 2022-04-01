@@ -122,6 +122,21 @@ class PembukuanController extends Controller
 
     public function destroy($idBuku)
     {
+        $data = pembukuan::where('id_pembukuans', $idBuku)->get()->first();
+        $nominal = $data->nominal;
+        $idRepo = session('idRepo');
+        $dataRepo = Repo::all()->where('id_repo', $idRepo)->first();
+        $saldo = $dataRepo->saldo;
+        if($nominal < 0){
+            $saldo = $saldo - $nominal;
+            // @dd($saldo);
+            repo::where('id_repo', $idRepo)->update(['saldo' => $saldo]);
+        }
+        else{
+            $saldo = $saldo - $nominal;
+            // @dd($saldo);
+            repo::where('id_repo', $idRepo)->update(['saldo' => $saldo]);
+        }
         pembukuan::destroy($idBuku);
         $redirect = '/dashboard/pembukuan/'.session('idRepo');
         return redirect($redirect);
