@@ -1,6 +1,7 @@
 # PJECT WORKSHOP PRODUKSI PERANGKAT LUNAK
 
-Kelompok 6: 
+## TEAM
+### Anggota Kelompok 6: 
 - Bagas Prakoso (3120510109)
 - Muhammad Farhan Bilnazari (3120510103)
 - Muhammad Faris Shafwan (3120510104)
@@ -12,27 +13,31 @@ Kelompok 6:
 - Bayu
 - 
 
-Pembagian Tugas: 
 
-Front End:
+### Pembagian Tugas: 
+
+#### Front End:
 - Fathan
 - Farhan
 - Nabila
 - Khafid
 - Rifa'i
 
-Back end:
+#### Back end:
 - Muhammad Faris Shafwan (3120510104)
 - Bagas P
 - Bagas Maulana (3120510609)
 - Bayu
+
 
 ## ANNOUNCEMENT 
 
 Lur ndang digae halaman cetak e
 
 
-##Cara menggunakan github
+
+## GITHUB
+### Cara Menggunakan Github
 - pastikan anda sudah menjadi colaborate dengan klik link yang sudah di bagikan di grub whatsapp atau anda bisa fork ke akun anda (lebih disarankan menjadi colaborate)
 - jika sudah melakukan cara di atas maka selanjutnya anda cloning project di github ke komputer anda dengan mengetikkan perintah `git clone {url github}`
 - INGAT! setelah clone, ketik di terminal `composer install` supaya artisan bisa berjalan dan migrate database. nama database `project-akhir-wawbw`. 
@@ -55,12 +60,12 @@ Lur ndang digae halaman cetak e
 - Menghapus branch di git local dengan perintah `git branch -d {nama_branch}`
 
 
-#error di git
+### error di git
 - `fatal: refusing to merge unrelated histories` saat pull. cara mengatasi: `git pull {nama remote} {nama branch} --allow-unrelated-histories`
 - `error: src refspec faris does not match any` saat push. cara mengatasi: nama branch lokal anda harus sama dengan branch yang akan anda push.
 - saat pull terdapat `Already up to date.` tapi di lokal anda tidak ada yang berubah. itu berarti di lokal anda lebih update daripada di github dan di github tidak ada perubahan apapun. jika anda tetap ingin pull ke github anda harus ada perubahan dan di commit dulu di githubnya setelah itu anda bisa pull lagi.
 - `error: failed to push some refs to 'https://github.com/Faris072/percobaan-github'` saat push. itu tandanya anda harus pull dulu dari github supaya lokal anda pudate atau sinkron dengan github setelah itu anda bisa coba push lagi beserta perubahan anda.
 - laravel tidak bisa jalan setelah menggunakan git. cara mengatasinya adalah di comand prompt ketik `composer install`. lalu ketikkan lagi composer dumpautoload`
 
-#error di laravel
+## error di laravel
 - jika ada error gambar tidak muncul dan saat di symbolic link menggunakan perintah `php artisan storage:link` masih tidak muncul, maka hapus directory symbolic linknya yang berada di dalam folder public, lalu cari directory storage dan hapus folder tersebut.
