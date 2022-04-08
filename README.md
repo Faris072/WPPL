@@ -17,10 +17,10 @@
 ### Pembagian Tugas: 
 
 #### Front End:
-- Fathan
-- Farhan
-- Nabila
-- Khafid
+- Fathan (3120510105)
+- Farhan (3120510102)
+- Nabila (3120510110)
+- Khafid (3120510
 - Rifa'i
 
 #### Back end:
