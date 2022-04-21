@@ -8,7 +8,7 @@
 - Fathan Willdany (3120510105)
 - Rifa'i Anggara Pratama (3120510101)
 - Nabila
-- Khafid
+- Eko Khafid Firmansyah (3120510611)
 - Bagas Maulana R (3120510609)
 - Bayu
 - 
@@ -20,7 +20,7 @@
 - Fathan (3120510105)
 - Farhan (3120510102)
 - Nabila (3120510110)
-- Khafid (3120510
+- Eko Khafid Firmansyah (3120510611)
 - Rifa'i
 
 #### Back end:
