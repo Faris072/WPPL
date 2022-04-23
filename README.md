@@ -147,4 +147,3 @@ Lur ndang digae halaman cetak e
 ## error di laravel
 
 -   jika ada error gambar tidak muncul dan saat di symbolic link menggunakan perintah `php artisan storage:link` masih tidak muncul, maka hapus directory symbolic linknya yang berada di dalam folder public, lalu cari directory storage dan hapus folder tersebut.
->>>>>>> ebfbfd7107644bc52c5d52a425bc9ad0fca8ad34
