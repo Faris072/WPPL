@@ -170,6 +170,12 @@ html {
 
 /* Responsive Css Management */
 
+@media only screen and (max-width: 312px) {
+    #text-title {
+        display: none;
+    }
+}
+
 @media only screen and (max-width: 991px) {
     .navbar-brand {
         width: calc(100vw - 140px);
@@ -178,6 +184,6 @@ html {
 
 @media only screen and (min-width: 600px) {
     #text-title {
-        min-width: 180px;
+        min-width: 15vw;
     }
 }
