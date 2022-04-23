@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # PJECT WORKSHOP PRODUKSI PERANGKAT LUNAK
 
 ## TEAM
@@ -8,11 +7,9 @@
 - Muhammad Faris Shafwan (3120510104)
 - Fathan Willdany (3120510105)
 - Rifa'i Anggara Pratama (3120510101)
-- Nabila
+- Nabila (3120510110)
 - Eko Khafid Firmansyah (3120510611)
 - Bagas Maulana R (3120510609)
-- Bayu
-- 
 
 
 ### Pembagian Tugas: 
