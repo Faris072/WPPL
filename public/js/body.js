@@ -26,11 +26,27 @@ $("#btnsidebar").on("click", function() {
 $("#btnmode").on("click", function() {
     if ($("#isi").hasClass("bgDark")) {
         $("#isi").removeClass("bgDark");
+        $("#navbarSupportedContent").removeClass("text-white");
+        $("#navbar").removeClass("bg-dark");
+        $("#text-title").removeClass("bg-dark");
+        $("#btnsidebar").removeClass("bg-dark");
+        $(".navbar-toggler").removeClass("bg-dark");
+        $("#navbar-logo").removeClass("img-invert");
+        $(".dropdown-menu").removeClass("bg-dark");
+        $(".dropdown-item").removeClass("text-white");
         $("#btnmode").html(
             '<button class="rounded-circle btn btn-dark" id="btnmode"><i class="fas fa-moon fa-2x" style="color:yellow;"></i></button>'
         );
     } else {
         $("#isi").addClass("bgDark");
+        $("#navbar").addClass("bg-dark");
+        $("#navbarSupportedContent").addClass("text-white");
+        $("#text-title").addClass("bg-dark");
+        $("#btnsidebar").addClass("bg-dark");
+        $(".navbar-toggler").addClass("bg-dark");
+        $("#navbar-logo").addClass("img-invert");
+        $(".dropdown-menu").addClass("bg-dark");
+        $(".dropdown-item").addClass("text-white");
         $("#btnmode").html(
             '<button class="rounded-circle btn btn-dark" id="btnmode"><i class="fas fa-sun fa-2x" style="color:yellow;"></i>'
         );

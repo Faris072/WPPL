@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg text-dark">
+<nav id="navbar" class="navbar navbar-expand-lg text-dark">
     <a class="navbar-brand" href="#">
-        <img src="{{ asset('asets/images/logo.png') }}" width="75" class="d-inline-block align-top" alt="">
+        <img id="navbar-logo" src="{{ asset('asets/images/logo.png') }}" width="75" class="d-inline-block align-top" alt="">
         <span id="text-title">
             {{ config('app.name', 'Pembukuan') }}
         </span>
@@ -10,7 +10,7 @@
     @endauth
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <i class="fa fa-ellipsis-v"></i>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">

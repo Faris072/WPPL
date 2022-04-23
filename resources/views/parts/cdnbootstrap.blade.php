@@ -36,8 +36,6 @@ integrity="sha512-2RLMQRNr+D47nbLnsbEqtEmgKy67OSCpWJjJM394czt99xj3jJJJBQ43K7lJpf
 crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <!--CKEditor-->
 <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
-<!-- Custom Style -->
-<link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 
 <!-- CSS -->
 <link rel="stylesheet" type="text/css" href="{{ asset('css/body.css') }}">

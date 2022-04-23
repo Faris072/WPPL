@@ -42,8 +42,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!--CKEditor-->
     <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
-    <!-- Custom Style -->
-    
+
     <!-- CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/body.css') }}">
     <link rel="stylesheet" href="{{ $css }}">

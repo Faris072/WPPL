@@ -116,8 +116,13 @@ html {
     position: fixed;
     z-index: 99;
     width: 8vh;
+    height: 8vh;
     bottom: 20px;
     right: 15px;
+}
+
+.navbar {
+    justify-content: flex-start;
 }
 
 .bgDark {
@@ -146,13 +151,30 @@ html {
     color: rgb(0, 123, 255);
 }
 
-#btnsidebar {
+#btnsidebar,
+.navbar-toggler {
     background-color: #fff;
+    border: 0;
     color: rgba(0, 123, 255, 0.993);
+}
+
+.img-invert {
+    filter: brightness(0) invert(1);
+}
+
+.dropdown-item.text-white:hover {
+    color: #444 !important;
+    background-color: #fff !important;
 }
 
 
 /* Responsive Css Management */
+
+@media only screen and (max-width: 991px) {
+    .navbar-brand {
+        width: calc(100vw - 140px);
+    }
+}
 
 @media only screen and (min-width: 600px) {
     #text-title {
