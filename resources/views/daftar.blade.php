@@ -8,7 +8,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
+
 	<link rel="stylesheet" href="css/style.css">
 
     <!--Font awesome-->
@@ -49,13 +49,13 @@
                         <small style="color:red;" >@error('phone') {{ $phone }} @enderror</small>
 		      		</div>
 	            <div class="form-group">
-	              <input id="password-field" type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" required>
-	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+	              <input id="password" type="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" required>
+	              <span toggle="#password-field" id="mata" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 				  <small style="color:white;" >@error('password') {{ $message }} @enderror</small>
 	            </div>
                 <div class="form-group">
-	              <input id="password-field" type="password" name="password2" class="form-control @error('password2') is-invalid @enderror" placeholder="Password confirmation" required>
-	              <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+	              <input id="password2" type="password" name="password2" class="form-control @error('password2') is-invalid @enderror" placeholder="Password confirmation" required>
+	              <span toggle="#password-field" id="mata2" class="fa fa-fw fa-eye field-icon toggle-password"></span>
 				  <small style="color:white;" >@error('password2') {{ $message }} @enderror</small>
 	            </div>
 	            <div class="form-group">
