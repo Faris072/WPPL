@@ -49,7 +49,7 @@ html {
 
 .sidebar ul li a:hover {
     /* background-color:rgba(255, 255, 255, 0.5); */
-    background-color: gold;
+    background-color: #d8dee9;
     /* color:rgb(255, 255, 255); */
     color: black;
 }
@@ -98,7 +98,7 @@ html {
     display: block;
     border-radius: 5px;
     border-left: 1px solid white;
-    background-color: gold;
+    background-color: #d8dee9;
     border: none;
     width: 92%;
 }

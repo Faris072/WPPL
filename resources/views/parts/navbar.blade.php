@@ -1,6 +1,6 @@
-<nav id="navbar" class="navbar navbar-expand-sm py-0 text-dark">
+<nav id="navbar" class="navbar navbar-expand-sm py-0 text-dark" style="background-color: #d8dee9">
     @auth
-    <button id="btnsidebar" class="btn btn-outline-light"></button>
+    <button id="btnsidebar" class="btn btn-light" style="background-color: #d8dee9"></button>
     @endauth
     <a class="navbar-brand" href="#">
         <img id="navbar-logo" src="{{ asset('asets/images/logo.png') }}" width="75" class="d-inline-block align-top" alt="">
