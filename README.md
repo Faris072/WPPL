@@ -1,6 +1,6 @@
 # PJECT WORKSHOP PRODUKSI PERANGKAT LUNAK
 
-## TEAM
+## TEAM:
 ### Anggota Kelompok 6: 
 - Bagas Prakoso (3120510109)
 - Muhammad Farhan Bilnazari (3120510103)
