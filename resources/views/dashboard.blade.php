@@ -16,7 +16,7 @@
                     <p class="card-text deskripsi<?php echo $i ?>">{{ $repo->deskripsi }}</p>
                     <br>
                     <small>{{ $repo->last_used_at }}</small>
-                    <a href="/dashboard/pembukuan/{{ $repo->id_repo }}" class="btn btn-outline-primary">Buka Buku</a>
+                    <a href="/dashboard/pembukuan/{{ $repo->id_repo }}" class="btn btn-outline-primary">Buka Bukumu</a>
                     <a href="/dashboard/{{ $repo->id_repo }}/edit" class="btn btn-outline-warning" style="display:inline;">Edit</a>
                     <form action="/dashboard/{{ $repo->id_repo }}" method="POST" style="display:inline;">
                         @csrf
