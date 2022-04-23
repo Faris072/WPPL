@@ -1,6 +1,6 @@
 # PROJECT WORKSHOP PRODUKSI PERANGKAT LUNAK
 
-## TEAM:
+## TEAM
 
 ### Anggota Kelompok 6:
 
