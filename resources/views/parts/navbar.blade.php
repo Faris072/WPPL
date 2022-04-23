@@ -1,11 +1,16 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav id="navbar" class="navbar navbar-expand-lg text-dark">
+    <a class="navbar-brand" href="#">
+        <img id="navbar-logo" src="{{ asset('asets/images/logo.png') }}" width="75" class="d-inline-block align-top" alt="">
+        <span id="text-title">
+            {{ config('app.name', 'Pembukuan') }}
+        </span>
+    </a>
     @auth
-    <button id="btnsidebar" style="margin-right:50px;" class="btn btn-outline-light"></button>
+        <button id="btnsidebar" class="btn btn-outline-light"></button>
     @endauth
-    <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <i class="fa fa-ellipsis-v"></i>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -14,7 +19,8 @@
         @auth @else @endauth gabungan dari auth dan guest. jika sudah login maka dijalankan element di dalam auth dan else jika belum maka dijalankan yang else dan endauth --}}
         @auth
             <div class="dropdown pr-5">
-                <a class="dropdown-toggle" style="color:white;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
                     Selamat datang {{ Auth::user()->username }}
                     {{-- Auth::user()->username. auth adalah nama classnya untuk yg sudah login. user adalah nama modelnya dan username adalah nama kolom di tabel --}}
                 </a>
