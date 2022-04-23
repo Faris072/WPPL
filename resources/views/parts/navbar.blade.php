@@ -1,13 +1,13 @@
-<nav id="navbar" class="navbar navbar-expand-lg text-dark">
+<nav id="navbar" class="navbar navbar-expand-sm py-0 text-dark">
+    @auth
+    <button id="btnsidebar" class="btn btn-outline-light"></button>
+    @endauth
     <a class="navbar-brand" href="#">
         <img id="navbar-logo" src="{{ asset('asets/images/logo.png') }}" width="75" class="d-inline-block align-top" alt="">
         <span id="text-title">
             {{ config('app.name', 'Pembukuan') }}
         </span>
     </a>
-    @auth
-        <button id="btnsidebar" class="btn btn-outline-light"></button>
-    @endauth
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fa fa-ellipsis-v"></i>
