@@ -1,0 +1,9 @@
+body{
+    overflow-x:hidden;
+}
+.navbar{
+    position: sticky;
+    top:0;
+    z-index:999;
+    box-shadow: 0px -3px 20px rgb(0, 0, 0);
+}
