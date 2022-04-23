@@ -60,6 +60,7 @@ Lur ndang digae halaman cetak e
 -   langkah untuk commit selain setelah clonning (dengan kata lain memperbarui repo lokal anda) adalah dengan mengetikan perintah `git commit -am "{pesan commit anda}"`.
 -   untuk meningkatkan ukuran buffer ketik `$ git config http.postBuffer {ukuran buffer dalam bentuk byte}`. contoh `$ git config http.postBuffer 524288000` (meningkatkan ukuran buffer ke 500mb)
 -   Menghapus branch di git local dengan perintah `git branch -d {nama_branch}`
+-   Untuk pull semua isi dari branch dari awal ke lokal menggunakan perintah `git reset --hard <nama remote>/<nama branch>`
 
 ### error di git
 
