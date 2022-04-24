@@ -15,11 +15,7 @@
         <div class="container-fluid-xl" id="isi">
             <div class="container pt-3 pb-5">
                 @yield('body')
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
+                
             </div>
         </div>
     </div>
