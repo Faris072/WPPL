@@ -56,12 +56,17 @@
                     <p class="card-text deskripsi<?php echo $i; ?>">{{ $repo->deskripsi }}</p>
                     <br>
                     <small>{{ $repo->last_used_at }}</small>
-                    <a href="/dashboard/pembukuan/{{ $repo->id_repo }}" class="btn btn-outline-primary">Buka
-                        Buku</a>
+                    <div class="row pl-3" style="justify-content: flex-start; width: 75%;">
+                        <div class="col-md-4 p-0">
+                            <a href="/dashboard/pembukuan/{{ $repo->id_repo }}" class="btn btn-outline-primary">Buka
+                                Buku</a>
+                        </div>
                     <!-- Button trigger modal Edit -->
-                    <button type="button" style="margin-bottom: 6px;" class="btn btn-outline-warning" data-toggle="modal" data-target="#ModalEdit">
-                        Edit Buku
-                    </button>
+                        <div class="col-md-4 p-0">
+                            <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#ModalEdit">
+                            Edit Buku
+                            </button>
+                        </div>
 
                     <!-- Modal -->
                     <form action="/dashboard/{{ $repo->id_repo }}" method="POST">
@@ -97,9 +102,12 @@
                     <!-- End Modal Edit -->
 
                     <!-- Button trigger modal Hapus -->
-                    <button type="button" style="margin-bottom: 6px;" class="btn btn-outline-danger" data-toggle="modal" data-target="#ModalHapus">
-                        Hapus Buku
-                    </button>
+                        <div class="col-md-4 p-0">
+                            <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#ModalHapus">
+                            Hapus Buku
+                            </button>
+                        </div>
+                    </div>
 
                     <!-- Modal -->
                     <form action="/dashboard/{{ $repo->id_repo }}" method="POST">
