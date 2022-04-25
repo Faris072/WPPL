@@ -20,7 +20,8 @@
     @endforeach
     </br></br>
     <a class="btn btn-info" href="/pembukuan/create">Tambah</a>
-    <table class='table table-striped' border='1' cellpadding='10' style='positon:static;'>
+    <div class="table-responsive-lg">
+    <table class='table table-hover table-dark mt-4'>
         <thead>
             <tr>
                 <th>Tanggal</th>
@@ -35,7 +36,6 @@
                     <td>{{ $value->tanggal }}</td>
                     <td>{{ $value->uraian }}</td>
                     <td>{{ $value->nominal }}</td>
-                    </td>
                     <td>
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-danger" data-toggle="modal"
@@ -75,4 +75,5 @@
             </tbody>
         @endforeach
     </table>
+    </div>
 @endsection
