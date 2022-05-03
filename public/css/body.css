@@ -7,7 +7,7 @@ html{
 }
 
 .modal-backdrop{
-    position:fixed;
+    display:none;
 }
 
 .navbar{
@@ -18,12 +18,23 @@ html{
 }
 
 .sidebar{
-    position:absolute;
+    z-index:1;
+    position: absolute;
     width:20%;
     height:100vh;
     overflow-y:auto;
     background-color:rgba(59, 59, 59, 0.993);
     box-shadow: -4px 0px 20px rgb(0, 0, 0);
+    transition: 1s cubic-bezier(0.74, -0.55, 0.29, 1.53);
+}
+
+#isi{
+    position:absolute;
+    z-index:1;
+    width:80%;
+    height:100vh;
+    overflow-y:auto;
+    right:0;
     transition: 1s cubic-bezier(0.74, -0.55, 0.29, 1.53);
 }
 
@@ -103,14 +114,6 @@ html{
     width:92%;
 }
 
-#isi{
-    position:absolute;
-    width:80%;
-    height:100vh;
-    overflow-y:auto;
-    right:0;
-    transition: 1s cubic-bezier(0.74, -0.55, 0.29, 1.53);
-}
 
 #btnmode{
     position:fixed;

@@ -16,7 +16,7 @@
     @endforeach
     <br>
     @foreach ($repo as $saldo)
-        <p>Saldo: {{ $saldo->saldo }}</p>
+        <p>Saldo: <span id="saldo">{{ $saldo->saldo }}</span></p>
     @endforeach
     </br></br>
     <a class="btn btn-info" href="/pembukuan/create">Tambah</a>
