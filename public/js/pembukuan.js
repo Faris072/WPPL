@@ -1,9 +1,9 @@
 let x = $('#deskripsiBuku').text();
 $('#deskripsiBuku').html(x);
 
-let saldo = $('#saldo').html();
 
-function titik(saldo) {
+function titik(element) {
+    let saldo = element.html();
     saldo = saldo.split("");
 
     let j = 1;
@@ -19,10 +19,11 @@ function titik(saldo) {
     }
     hasil = saldo.join('');
 
-    $('#saldo').html(hasil);
+    return element.html(hasil);
 }
 
-titik(saldo);
+let element = $('#saldo');
+titik(element);
 
 // 1000
 // unshift = 00;
