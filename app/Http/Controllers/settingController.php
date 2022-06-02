@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\user;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Validator;
 
 class settingController extends Controller
 {
@@ -16,7 +15,7 @@ class settingController extends Controller
      */
     public function index()
     {
-        return view('profil', [
+        return view('profil',[
             'title' => 'Profil',
             'css2' => '',
             'js' => '',
@@ -65,7 +64,7 @@ class settingController extends Controller
     public function edit($user)
     {
         $dataProfil = user::find($user);
-        return view('setting', [
+        return view('setting',[
             'title' => 'Edit Profil',
             'css2' => '',
             'js' => '',
@@ -81,37 +80,22 @@ class settingController extends Controller
      * @param  \App\Models\controller  $controller
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $profil)
+    public function update(Request $request,$id)
     {
-        $validate = $request->validate([
+        $namaAsli = $request->file('foto')->getClientOriginalName();
+        $ekstensi = $request->file('foto')->getClientOriginalExtension();
+        $namaFoto = date('ymdHis').'.'.$ekstensi;
+        $request->file('foto')->storeAs('/foto', $namaFoto);
+        $validatedData = $request->validate([
             'username' => 'min:4|max:50|required',
-            'foto' => 'nullable|image|mimes:jpg,png,jpeg,svg|max:2048',
+            'foto' => 'required|image|mimes:jpg,png,jpeg,svg|max:2048',
             'phone' => 'required',
-            'password' => 'min:8|nullable'
+            'password' => 'required|min:8'
         ]);
-
-        // Upload Photo Profile
-        $image = $request->file('foto');
-        if ($image) {
-            $ekstensi = $image->getClientOriginalExtension();
-            $namaFoto = date('ymdHis') . '.' . $ekstensi;
-            $image->storeAs('/public/foto', $namaFoto);
-            $validate['foto'] = $namaFoto;
-        } else $validate['foto'] = $profil->foto;
-
-        // set password
-        if ($validate['password']) $validate['password'] = bcrypt($validate['password']);
-        else unset($validate['password']);
-
-        if ($profil->update($validate)) {
-            return redirect()
-                ->route('profil.index', $profil->id)
-                ->with('success', 'Data Berhasil Diubah');
-        } else {
-            return redirect()
-                ->route('profil.edit', $profil->id)
-                ->with('error', 'Data Gagal Diubah');
-        }
+        $validatedData['foto'] = $namaFoto;
+        $validatedData['password'] = bcrypt($validatedData['password']);
+        user::where('id',$id)->update($validatedData);
+        return redirect('/profil');
     }
 
     /**
