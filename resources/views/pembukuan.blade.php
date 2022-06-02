@@ -34,7 +34,7 @@
                 <tr>
                     <td>{{ $value->tanggal }}</td>
                     <td>{{ $value->uraian }}</td>
-                    <td>{{ $value->nominal }}</td>
+                    <td class="arus">{{ $value->nominal }}</td>
                     </td>
                     <td>
                         <!-- Button trigger modal -->

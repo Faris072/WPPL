@@ -24,6 +24,7 @@ function titik(element) {
 
 let element = $('#saldo');
 titik(element);
+titik($('.arus'));
 
 // 1000
 // unshift = 00;

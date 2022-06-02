@@ -20,6 +20,7 @@ class Repo extends Migration
             $table->string('nama_repo',50);
             $table->string('deskripsi',2000)->nullable();
             $table->bigInteger('saldo')->nullable();
+            $table->string('mata_uang')->nullable();
             $table->timestamp('last_used_at')->nullable();
             $table->timestamps();
         });
