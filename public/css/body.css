@@ -49,6 +49,7 @@ html{
 
 .sidebar ul li a:hover{
     /* background-color:rgba(255, 255, 255, 0.5); */
+<<<<<<< HEAD
     background-color:gold;
     /* color:rgb(255, 255, 255); */
     color:black;
@@ -109,6 +110,68 @@ html{
     height:100vh;
     overflow-y:auto;
     right:0;
+=======
+    background-color: #d8dee9;
+    /* color:rgb(255, 255, 255); */
+    color: black;
+}
+
+.sidebar ul li ul {
+    padding: 0;
+}
+
+.sidebar ul li ul li {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    margin-right: 10px;
+    margin-left: 30px;
+    display: block;
+    border-radius: 5px;
+    border-left: 1px solid white;
+}
+
+.sidebar ul li form button {
+    text-decoration: none;
+    color: white;
+    text-align: left;
+    padding: 15px;
+    margin-right: 10px;
+    margin-left: 15px;
+    display: block;
+    border-radius: 5px;
+    border-left: 1px solid white;
+    background-color: rgba(59, 59, 59, 0);
+    border: none;
+    width: 92%;
+}
+
+.sidebar ul li form button:hover {
+    text-decoration: none;
+    color: black;
+    padding: 15px;
+    margin-right: 10px;
+    margin-left: 10px;
+    display: block;
+    border-radius: 5px;
+    border-left: 1px solid white;
+    background-color: #d8dee9;
+    border: none;
+    width: 92%;
+}
+
+#isi {
+    position: absolute;
+    width: 80%;
+    height: 100vh;
+    overflow-y: auto;
+    right: 0;
+>>>>>>> 2878842dd14f73609400ea095a3f5a8461ed9f10
     transition: 1s cubic-bezier(0.74, -0.55, 0.29, 1.53);
 }
 
