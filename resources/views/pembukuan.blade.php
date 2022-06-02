@@ -20,7 +20,8 @@
     @endforeach
     </br></br>
     <a class="btn btn-info" href="/pembukuan/create">Tambah</a>
-    <table class='table table-striped' border='1' cellpadding='10' style='positon:static;'>
+    <div class="table-responsive-lg">
+    <table class='table table-hover table-dark mt-4'>
         <thead>
             <tr>
                 <th>Tanggal</th>
@@ -49,13 +50,13 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">DELETE DATA</h5>
+                                        <h5 class="modal-title" style="color:black" id="exampleModalLabel">DELETE DATA</h5>
                                         <button type="button" class="close" data-dismiss="modal"
                                             aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <div class="modal-body">
+                                    <div class="modal-body" style="color:black">
                                         Dengan menghapus data ini, maka saldo setelah data ini akan disesuaikan
                                     </div>
                                     <div class="modal-footer">
@@ -75,4 +76,5 @@
             </tbody>
         @endforeach
     </table>
+    </div>
 @endsection
