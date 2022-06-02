@@ -1,21 +1,8 @@
-<<<<<<< HEAD
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     @auth
     <button id="btnsidebar" style="margin-right:50px;" class="btn btn-outline-light"></button>
     @endauth
     <a class="navbar-brand" href="#">Navbar</a>
-=======
-<nav id="navbar" class="navbar navbar-expand-sm py-0 text-dark" style="background-color: #d8dee9">
-    @auth
-    <button id="btnsidebar" class="btn btn-light" style="background-color: #d8dee9"></button>
-    @endauth
-    <a class="navbar-brand" href="#">
-        <img id="navbar-logo" src="{{ asset('asets/images/logo.png') }}" width="75" class="d-inline-block align-top" alt="">
-        <span id="text-title">
-            {{ config('app.name', 'Pembukuan') }}
-        </span>
-    </a>
->>>>>>> 2878842dd14f73609400ea095a3f5a8461ed9f10
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
