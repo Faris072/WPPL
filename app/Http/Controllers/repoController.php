@@ -72,7 +72,7 @@ class repoController extends Controller
 
         $validatedData['saldo'] = 0;
         $validatedData['mata_uang'] = 'Rp';
-        @dd($validatedData['mata_uang']);
+
         repo::create($validatedData);
 
         return redirect('/dashboard');

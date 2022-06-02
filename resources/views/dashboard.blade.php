@@ -63,7 +63,7 @@
                         </div>
                     <!-- Button trigger modal Edit -->
                         <div class="col-md-4 p-0">
-                            <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#ModalEdit">
+                            <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#ModalEdit-{{$repo->id_repo}}">
                             Edit Buku
                             </button>
                         </div>
@@ -72,7 +72,7 @@
                     <form action="/dashboard/{{ $repo->id_repo }}" method="POST">
                         @csrf
                         @method('PUT')
-                        <div class="modal fade" id="ModalEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal fade" id="ModalEdit-{{$repo->id_repo}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-centered" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header bg-secondary">
@@ -103,7 +103,7 @@
 
                     <!-- Button trigger modal Hapus -->
                         <div class="col-md-4 p-0">
-                            <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#ModalHapus">
+                            <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#ModalHapus-{{$repo->id_repo}}">
                             Hapus Buku
                             </button>
                         </div>
@@ -113,7 +113,7 @@
                     <form action="/dashboard/{{ $repo->id_repo }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <div class="modal fade" id="ModalHapus" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal fade" id="ModalHapus-{{$repo->id_repo}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header bg-secondary">
