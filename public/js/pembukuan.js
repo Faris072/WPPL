@@ -24,6 +24,10 @@ function titik(element) {
 
 let element = $('#saldo');
 titik(element);
+let jmlData = $('.arus').length;
+for(let i = 0; i < jmlData; i++){
+    titik($(`.arus:eq(${i})`));
+}
 
 // 1000
 // unshift = 00;

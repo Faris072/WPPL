@@ -66,10 +66,12 @@ class repoController extends Controller
             'deskripsi' => '',
             'id' => '',
             'id_repo' => '',
-            'saldo' => ''
+            'saldo' => '',
+            'mata_uang' => ''
         ]);
 
         $validatedData['saldo'] = 0;
+        $validatedData['mata_uang'] = 'Rp';
 
         repo::create($validatedData);
 
