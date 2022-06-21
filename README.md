@@ -18,7 +18,7 @@
 - Fathan (3120510105)
 - Farhan (3120510102)
 - Nabila (3120510110)
-- Eko Khafid Firmansyah (3120510611)
+- Khafid (3120510
 - Rifa'i
 
 #### Back end:
@@ -67,6 +67,7 @@ Lur ndang digae halaman cetak e
 
 ## error di laravel
 - jika ada error gambar tidak muncul dan saat di symbolic link menggunakan perintah `php artisan storage:link` masih tidak muncul, maka hapus directory symbolic linknya yang berada di dalam folder public, lalu cari directory storage dan hapus folder tersebut.
+<<<<<<< HEAD
 =======
 # PROJECT WORKSHOP PRODUKSI PERANGKAT LUNAK
 
@@ -148,3 +149,10 @@ Lur ndang digae halaman cetak e
 ## error di laravel
 
 -   jika ada error gambar tidak muncul dan saat di symbolic link menggunakan perintah `php artisan storage:link` masih tidak muncul, maka hapus directory symbolic linknya yang berada di dalam folder public, lalu cari directory storage dan hapus folder tersebut.
+=======
+
+
+
+link Trello: 
+https://trello.com/invite/b/suG5GuhS/4a92677f0971d6a1dacaee05cacab46d/tugas-wppl
+>>>>>>> 5572e4e2daf2a366ade7fc92ccd0349e6966557f

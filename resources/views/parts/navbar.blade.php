@@ -2,12 +2,14 @@
     @auth
     <button id="btnsidebar" style="margin-right:50px;" class="btn btn-outline-light"></button>
     @endauth
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">
+        <img src="/storage/foto/Logo_bluewhite.png" width="40" height="30" alt="">
+    </a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="#">Eletronic Financial Record <span class="sr-only">(current)</span></a>
             </li>
         </ul>
         @auth
