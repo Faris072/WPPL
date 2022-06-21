@@ -67,21 +67,10 @@
                 </div>
             </form>
         </div>
-<<<<<<< HEAD
-    @endforeach
-    <br>
-    @foreach ($repo as $saldo)
-        <p>Saldo: <span id="saldo">{{ $saldo->saldo }}</span></p>
-    @endforeach
-    </br></br>
-    <a class="btn btn-info" href="/pembukuan/create">Tambah</a>
-    <div class="table-responsive-lg">
-=======
     </div>
 </div>
 <!-- End Modal -->
 <div class="table-responsive-lg">
->>>>>>> fathan
     <table class='table table-hover table-dark mt-4'>
         <thead>
             <tr>
@@ -91,33 +80,18 @@
                 <th colspan="2">Action</th>
             </tr>
         </thead>
+        <tbody>
         @foreach ($datas as $value)
-<<<<<<< HEAD
-            <tbody>
                 <tr>
                     <td>{{ $value->tanggal }}</td>
                     <td>{{ $value->uraian }}</td>
                     <td class="arus">{{ $value->nominal }}</td>
-                    </td>
                     <td>
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-danger" data-toggle="modal"
                             data-target="#modalDeletePembukuan{{ $value->id_pembukuans }}">
                             DELETE
                         </button>
-=======
-        <tbody>
-            <tr>
-                <td>{{ $value->tanggal }}</td>
-                <td>{{ $value->uraian }}</td>
-                <td class="arus">{{ $value->nominal }}</td>
-                </td>
-                <td>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDeletePembukuan{{ $value->id_pembukuans }}">
-                        DELETE
-                    </button>
->>>>>>> fathan
 
                     <!-- Modal DELETE pembukuan -->
                     <div class="modal fade" id="modalDeletePembukuan{{ $value->id_pembukuans }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -146,8 +120,8 @@
                     <!--endmodal-->
                 </td>
             </tr>
+            @endforeach
         </tbody>
-        @endforeach
     </table>
 </div>
 @endsection
