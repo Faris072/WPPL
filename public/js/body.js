@@ -36,3 +36,4 @@ $('#btnmode').on('click', function () {
         $('#btnmode').html('<button class="rounded-circle btn btn-dark" id="btnmode"><i class="fas fa-sun fa-2x" style="color:yellow;"></i>');
     }
 });
+
