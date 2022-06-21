@@ -7,13 +7,8 @@
 - Muhammad Faris Shafwan (3120510104)
 - Fathan Willdany (3120510105)
 - Rifa'i Anggara Pratama (3120510101)
-<<<<<<< HEAD
 - Nabila (3120510110)
 - Eko Khafid Firmansyah (3120510611)
-=======
-- Nabila
-- Khafid
->>>>>>> 5572e4e2daf2a366ade7fc92ccd0349e6966557f
 - Bagas Maulana R (3120510609)
 
 
